@@ -1,0 +1,16 @@
+# Standalone export (large base64-encoded file)
+febowedding-standalone.html
+
+# Temp / server files
+serve.py
+start-server.sh
+preview-export.png
+preview-fullpage.png
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Python
+__pycache__/
+*.pyc

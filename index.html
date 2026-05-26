@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>febowedding.nl — Bodine & Felix · 22.08.2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --red-deep:   #8c1608;
+      --red-mid:    #b82010;
+      --orange:     #e0421c;
+      --cream:      #f5ead8;
+      --cream-dim:  #d9cab0;
+      --dark:       #1a0a06;
+
+      /* Garden Chique palette from mood board */
+      --tangerine:  #EAA239;
+      --gc-cream:   #FFE4A1;
+      --leaves:     #8F9E25;
+      --wisteria:   #C3A5C1;
+      --mulberry:   #97332C;
+      --baby-rose:  #E59793;
+
+      --serif:  'Playfair Display', Georgia, serif;
+      --mono:   'DM Mono', 'Courier New', monospace;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--red-deep);
+      color: var(--cream);
+      font-family: var(--mono);
+      font-weight: 300;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--cream); transition: opacity 0.2s; text-decoration: none; }
+    a:hover { opacity: 0.65; }
+    p { margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── NAV ────────────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(140, 22, 8, 0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(245,234,216,0.12);
+    }
+
+    .nav__inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav__logo {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--cream);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav__links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav__links a {
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(245,234,216,0.75);
+    }
+
+    .nav__links a:hover { color: var(--cream); opacity: 1; }
+
+    .nav__rsvp {
+      background: var(--cream);
+      color: var(--red-deep) !important;
+      padding: 0.45rem 1.25rem;
+      font-size: 0.62rem !important;
+      font-weight: 400 !important;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 1 !important;
+      transition: background 0.2s !important;
+      flex-shrink: 0;
+    }
+
+    .nav__rsvp:hover { background: var(--tangerine) !important; color: var(--dark) !important; opacity: 1 !important; }
+
+    .nav__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+      flex-shrink: 0;
+    }
+
+    .nav__hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--cream);
+    }
+
+    .nav__mobile {
+      display: none;
+      flex-direction: column;
+      background: var(--red-deep);
+      border-top: 1px solid rgba(245,234,216,0.12);
+      padding: 1.5rem 2rem;
+      gap: 1.25rem;
+    }
+
+    .nav__mobile.open { display: flex; }
+
+    .nav__mobile a {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(245,234,216,0.8);
+    }
+
+    .nav__mobile .nav__rsvp {
+      display: inline-block;
+      width: fit-content;
+      margin-top: 0.5rem;
+    }
+
+    /* ── HERO ───────────────────────────────────────────────── */
+    .hero {
+      min-height: 100vh;
+      padding-top: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Left panel — card */
+    .hero__left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 3rem 4rem 4rem;
+      background: var(--red-deep);
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Right panel — photo */
+    .hero__right {
+      position: relative;
+      overflow: hidden;
+      min-height: 500px;
+    }
+
+    .hero__photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+
+    .hero__photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--red-deep) 0%, transparent 15%);
+      pointer-events: none;
+    }
+
+    /* Wavy card */
+    .wavy-card {
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+    }
+
+    .wavy-card__outer {
+      background: var(--orange);
+      padding: 14px;
+      clip-path: polygon(
+        0% 2.5%, 2% 0%, 4% 2%, 6% 0%, 8% 2%, 10% 0%, 12% 2%, 14% 0%, 16% 2%, 18% 0%,
+        20% 2%, 22% 0%, 24% 2%, 26% 0%, 28% 2%, 30% 0%, 32% 2%, 34% 0%, 36% 2%, 38% 0%,
+        40% 2%, 42% 0%, 44% 2%, 46% 0%, 48% 2%, 50% 0%, 52% 2%, 54% 0%, 56% 2%, 58% 0%,
+        60% 2%, 62% 0%, 64% 2%, 66% 0%, 68% 2%, 70% 0%, 72% 2%, 74% 0%, 76% 2%, 78% 0%,
+        80% 2%, 82% 0%, 84% 2%, 86% 0%, 88% 2%, 90% 0%, 92% 2%, 94% 0%, 96% 2%, 98% 0%, 100% 2.5%,
+        100% 2.5%, 97.5% 4%, 100% 6%, 97.5% 8%, 100% 10%, 97.5% 12%, 100% 14%, 97.5% 16%, 100% 18%,
+        97.5% 20%, 100% 22%, 97.5% 24%, 100% 26%, 97.5% 28%, 100% 30%, 97.5% 32%, 100% 34%, 97.5% 36%,
+        100% 38%, 97.5% 40%, 100% 42%, 97.5% 44%, 100% 46%, 97.5% 48%, 100% 50%, 97.5% 52%, 100% 54%,
+        97.5% 56%, 100% 58%, 97.5% 60%, 100% 62%, 97.5% 64%, 100% 66%, 97.5% 68%, 100% 70%, 97.5% 72%,
+        100% 74%, 97.5% 76%, 100% 78%, 97.5% 80%, 100% 82%, 97.5% 84%, 100% 86%, 97.5% 88%, 100% 90%,
+        97.5% 92%, 100% 94%, 97.5% 96%, 100% 97.5%,
+        100% 100%, 98% 97.5%, 96% 100%, 94% 97.5%, 92% 100%, 90% 97.5%, 88% 100%, 86% 97.5%, 84% 100%,
+        82% 97.5%, 80% 100%, 78% 97.5%, 76% 100%, 74% 97.5%, 72% 100%, 70% 97.5%, 68% 100%, 66% 97.5%,
+        64% 100%, 62% 97.5%, 60% 100%, 58% 97.5%, 56% 100%, 54% 97.5%, 52% 100%, 50% 97.5%, 48% 100%,
+        46% 97.5%, 44% 100%, 42% 97.5%, 40% 100%, 38% 97.5%, 36% 100%, 34% 97.5%, 32% 100%, 30% 97.5%,
+        28% 100%, 26% 97.5%, 24% 100%, 22% 97.5%, 20% 100%, 18% 97.5%, 16% 100%, 14% 97.5%, 12% 100%,
+        10% 97.5%, 8% 100%, 6% 97.5%, 4% 100%, 2% 97.5%, 0% 100%,
+        0% 100%, 2.5% 96%, 0% 94%, 2.5% 92%, 0% 90%, 2.5% 88%, 0% 86%, 2.5% 84%, 0% 82%,
+        2.5% 80%, 0% 78%, 2.5% 76%, 0% 74%, 2.5% 72%, 0% 70%, 2.5% 68%, 0% 66%, 2.5% 64%,
+        0% 62%, 2.5% 60%, 0% 58%, 2.5% 56%, 0% 54%, 2.5% 52%, 0% 50%, 2.5% 48%, 0% 46%,
+        2.5% 44%, 0% 42%, 2.5% 40%, 0% 38%, 2.5% 36%, 0% 34%, 2.5% 32%, 0% 30%, 2.5% 28%,
+        0% 26%, 2.5% 24%, 0% 22%, 2.5% 20%, 0% 18%, 2.5% 16%, 0% 14%, 2.5% 12%, 0% 10%,
+        2.5% 8%, 0% 6%, 2.5% 4%, 0% 2.5%
+      );
+    }
+
+    .wavy-card__inner {
+      background: var(--red-mid);
+      padding: 3rem 2.5rem;
+      text-align: center;
+      clip-path: polygon(
+        0% 2.5%, 2% 0%, 4% 2%, 6% 0%, 8% 2%, 10% 0%, 12% 2%, 14% 0%, 16% 2%, 18% 0%,
+        20% 2%, 22% 0%, 24% 2%, 26% 0%, 28% 2%, 30% 0%, 32% 2%, 34% 0%, 36% 2%, 38% 0%,
+        40% 2%, 42% 0%, 44% 2%, 46% 0%, 48% 2%, 50% 0%, 52% 2%, 54% 0%, 56% 2%, 58% 0%,
+        60% 2%, 62% 0%, 64% 2%, 66% 0%, 68% 2%, 70% 0%, 72% 2%, 74% 0%, 76% 2%, 78% 0%,
+        80% 2%, 82% 0%, 84% 2%, 86% 0%, 88% 2%, 90% 0%, 92% 2%, 94% 0%, 96% 2%, 98% 0%, 100% 2.5%,
+        100% 2.5%, 97.5% 4%, 100% 6%, 97.5% 8%, 100% 10%, 97.5% 12%, 100% 14%, 97.5% 16%, 100% 18%,
+        97.5% 20%, 100% 22%, 97.5% 24%, 100% 26%, 97.5% 28%, 100% 30%, 97.5% 32%, 100% 34%, 97.5% 36%,
+        100% 38%, 97.5% 40%, 100% 42%, 97.5% 44%, 100% 46%, 97.5% 48%, 100% 50%, 97.5% 52%, 100% 54%,
+        97.5% 56%, 100% 58%, 97.5% 60%, 100% 62%, 97.5% 64%, 100% 66%, 97.5% 68%, 100% 70%, 97.5% 72%,
+        100% 74%, 97.5% 76%, 100% 78%, 97.5% 80%, 100% 82%, 97.5% 84%, 100% 86%, 97.5% 88%, 100% 90%,
+        97.5% 92%, 100% 94%, 97.5% 96%, 100% 97.5%,
+        100% 100%, 98% 97.5%, 96% 100%, 94% 97.5%, 92% 100%, 90% 97.5%, 88% 100%, 86% 97.5%, 84% 100%,
+        82% 97.5%, 80% 100%, 78% 97.5%, 76% 100%, 74% 97.5%, 72% 100%, 70% 97.5%, 68% 100%, 66% 97.5%,
+        64% 100%, 62% 97.5%, 60% 100%, 58% 97.5%, 56% 100%, 54% 97.5%, 52% 100%, 50% 97.5%, 48% 100%,
+        46% 97.5%, 44% 100%, 42% 97.5%, 40% 100%, 38% 97.5%, 36% 100%, 34% 97.5%, 32% 100%, 30% 97.5%,
+        28% 100%, 26% 97.5%, 24% 100%, 22% 97.5%, 20% 100%, 18% 97.5%, 16% 100%, 14% 97.5%, 12% 100%,
+        10% 97.5%, 8% 100%, 6% 97.5%, 4% 100%, 2% 97.5%, 0% 100%,
+        0% 100%, 2.5% 96%, 0% 94%, 2.5% 92%, 0% 90%, 2.5% 88%, 0% 86%, 2.5% 84%, 0% 82%,
+        2.5% 80%, 0% 78%, 2.5% 76%, 0% 74%, 2.5% 72%, 0% 70%, 2.5% 68%, 0% 66%, 2.5% 64%,
+        0% 62%, 2.5% 60%, 0% 58%, 2.5% 56%, 0% 54%, 2.5% 52%, 0% 50%, 2.5% 48%, 0% 46%,
+        2.5% 44%, 0% 42%, 2.5% 40%, 0% 38%, 2.5% 36%, 0% 34%, 2.5% 32%, 0% 30%, 2.5% 28%,
+        0% 26%, 2.5% 24%, 0% 22%, 2.5% 20%, 0% 18%, 2.5% 16%, 0% 14%, 2.5% 12%, 0% 10%,
+        2.5% 8%, 0% 6%, 2.5% 4%, 0% 2.5%
+      );
+    }
+
+    .hero__eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(245,234,216,0.7);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero__names {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.0;
+      color: var(--cream);
+      margin-bottom: 1.5rem;
+    }
+
+    .starburst {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 1.5rem;
+      opacity: 0.5;
+    }
+
+    .hero__date {
+      font-size: 0.82rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      color: var(--cream);
+      margin-bottom: 0.3rem;
+    }
+
+    .hero__location {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: rgba(245,234,216,0.65);
+      margin-bottom: 2rem;
+    }
+
+    .hero__scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,234,216,0.35);
+    }
+
+    .hero__scroll-line {
+      width: 1px;
+      height: 32px;
+      background: rgba(245,234,216,0.3);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.1; }
+    }
+
+    /* ── CAROUSEL ───────────────────────────────────────────── */
+    .carousel {
+      position: relative;
+      background: var(--red-deep);
+      overflow: hidden;
+    }
+
+    /* ── Mobile: single full-width slide ── */
+    .carousel__track {
+      display: flex;
+      transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .carousel__slide {
+      flex: 0 0 100%;
+      position: relative;
+    }
+
+    .carousel__slide img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* Mobile: show portrait photos at good height */
+    @media (max-width: 860px) {
+      .carousel__slide img { height: 420px; object-position: center 10%; }
+    }
+
+    /* ── Desktop: 3-up peek layout ── */
+    @media (min-width: 861px) {
+      .carousel {
+        padding: 3rem 0 2.5rem;
+      }
+
+      .carousel__viewport {
+        /* show centre + partial left/right */
+        overflow: hidden;
+        padding: 0 80px;
+      }
+
+      .carousel__track {
+        gap: 20px;
+        /* each slide is 60% of viewport, centred */
+      }
+
+      .carousel__slide {
+        flex: 0 0 calc(60% - 10px);
+        border-radius: 2px;
+        overflow: hidden;
+        transition: opacity 0.4s, transform 0.4s;
+        opacity: 0.35;
+        transform: scale(0.93);
+      }
+
+      .carousel__slide.active {
+        opacity: 1;
+        transform: scale(1);
+        flex: 0 0 calc(60% - 10px);
+      }
+
+      .carousel__slide img {
+        height: 680px;
+        object-fit: cover;
+        object-position: center 10%;
+      }
+    }
+
+    .carousel__prev,
+    .carousel__next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(140,22,8,0.75);
+      border: 1px solid rgba(245,234,216,0.2);
+      color: var(--cream);
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+      z-index: 20;
+      transition: background 0.2s;
+    }
+
+    .carousel__prev { left: 1.5rem; }
+    .carousel__next { right: 1.5rem; }
+    .carousel__prev:hover, .carousel__next:hover { background: var(--orange); }
+
+    .carousel__dots {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.5rem;
+      z-index: 10;
+    }
+
+    @media (min-width: 861px) {
+      .carousel__dots { bottom: 0.5rem; }
+    }
+
+    .carousel__dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(245,234,216,0.3);
+      cursor: pointer;
+      transition: background 0.2s;
+      border: none;
+    }
+
+    .carousel__dot.active { background: var(--cream); }
+
+    /* ── PHOTO GALLERY (editorial grid) ──────────────────── */
+    .gallery { padding: 0; }
+
+    .gallery__grid {
+      display: grid;
+      gap: 4px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
+    }
+
+    .gallery__item {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery__item:hover img { transform: scale(1.04); }
+
+    /* Row 1: landscape wide + portrait */
+    .gallery__item--wide   { grid-column: span 2; }
+    .gallery__item--tall   { grid-row: span 2; }
+    .gallery__item--square { grid-column: span 1; }
+
+    /* Fixed heights */
+    .gallery__item { height: 340px; }
+    .gallery__item--tall { height: 684px; } /* 2×340 + 4px gap */
+
+    @media (max-width: 768px) {
+      .gallery__grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .gallery__item { height: 220px; }
+      .gallery__item--wide { grid-column: span 2; }
+      .gallery__item--tall { grid-row: span 1; height: 220px; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery__grid { grid-template-columns: 1fr; }
+      .gallery__item, .gallery__item--wide, .gallery__item--tall { grid-column: span 1; grid-row: span 1; height: 260px; }
+    }
+
+    /* ── SECTIONS ───────────────────────────────────────────── */
+    section { padding: 5.5rem 0; }
+
+    .section-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    .section-inner--wide {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    .section--light   { background: var(--orange); }
+    .section--mid     { background: var(--red-mid); }
+    .section--deep    { background: var(--red-deep); }
+    .section--darkest { background: var(--dark); }
+
+    /* ── Typography ─────────────────────────────────────────── */
+    .label {
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(245,234,216,0.6);
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+
+    .section--light .label { color: rgba(26,10,6,0.5); }
+
+    h2 {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--cream);
+      margin-bottom: 1.75rem;
+    }
+
+    h3 {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.35rem;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+    }
+
+    p {
+      font-size: 0.88rem;
+      line-height: 1.85;
+      color: rgba(245,234,216,0.8);
+    }
+
+    .section--light p { color: rgba(245,234,216,0.88); }
+
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .ornament__line { flex: 1; height: 1px; background: rgba(245,234,216,0.18); }
+    .ornament__star { font-size: 0.7rem; color: rgba(245,234,216,0.4); }
+    .section--light .ornament__line { background: rgba(245,234,216,0.28); }
+
+    /* ── Photo band ─────────────────────────────────────────── */
+    .photo-band {
+      width: 100%;
+      height: 420px;
+      overflow: hidden;
+    }
+
+    .photo-band img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .photo-band--short { height: 280px; }
+
+    /* ── Koe photo band ─────────────────────────────────────── */
+    .koe-band {
+      width: 100%;
+      height: 336px;   /* 280 × 1.2 */
+      overflow: hidden;
+    }
+
+    .koe-band img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 58%;
+      display: block;
+    }
+
+    @media (min-width: 861px) {
+      .koe-band { height: 380px; }
+      .koe-band img { object-position: center 60%; }
+    }
+
+    /* ── Info grid ──────────────────────────────────────────── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .info-block__title {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(245,234,216,0.5);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── Timeline ───────────────────────────────────────────── */
+    .timeline {
+      list-style: none;
+      margin-top: 2.5rem;
+      position: relative;
+      padding-left: 1.75rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 10px;
+      bottom: 10px;
+      width: 1px;
+      background: rgba(245,234,216,0.15);
+    }
+
+    .timeline__item {
+      position: relative;
+      padding-bottom: 2.25rem;
+    }
+
+    .timeline__item:last-child { padding-bottom: 0; }
+
+    .timeline__dot {
+      position: absolute;
+      left: -1.75rem;
+      top: 9px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--red-mid);
+      border: 1.5px solid rgba(245,234,216,0.45);
+    }
+
+    .timeline__time {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      color: var(--tangerine);
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline__event {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--cream);
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline__desc { font-size: 0.82rem; opacity: 0.7; margin: 0; }
+
+    /* ── Cards ──────────────────────────────────────────────── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .card {
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(245,234,216,0.12);
+      padding: 1.75rem;
+    }
+
+    .card__badge {
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(245,234,216,0.5);
+      margin-bottom: 0.75rem;
+    }
+
+    .card h3 { font-size: 1.15rem; margin-bottom: 0.65rem; }
+    .card p { font-size: 0.82rem; }
+    .card hr { border: none; border-top: 1px solid rgba(245,234,216,0.12); margin: 1rem 0; }
+
+    /* ── DRESSCODE ──────────────────────────────────────────── */
+    .gc-bubbles {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .gc-bubble {
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: default;
+    }
+
+    .gc-bubble:hover {
+      transform: scale(1.12) translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+
+    .gc-bubble--lg { width: 96px; height: 96px; }
+    .gc-bubble--md { width: 76px; height: 76px; }
+    .gc-bubble--sm { width: 58px; height: 58px; }
+
+    .gc-bubble span {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.9);
+      text-align: center;
+      line-height: 1.2;
+      padding: 0 6px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+      pointer-events: none;
+    }
+
+    .gc-bubble--sm span { font-size: 0.6rem; }
+
+    /* Dresscode mood grid */
+    .gc-mood {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .gc-mood__item {
+      background: rgba(0,0,0,0.15);
+      border: 1px solid rgba(245,234,216,0.12);
+      padding: 1.25rem;
+      text-align: center;
+    }
+
+    .gc-mood__icon { font-size: 1.75rem; margin-bottom: 0.5rem; display: block; }
+
+    .gc-mood__label {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--cream);
+      margin-bottom: 0.25rem;
+    }
+
+    .gc-mood__desc { font-size: 0.75rem; opacity: 0.6; margin: 0; }
+
+    /* ── RSVP ───────────────────────────────────────────────── */
+    .rsvp-box {
+      border: 1px solid rgba(245,234,216,0.2);
+      padding: 3rem 2.5rem;
+      margin-top: 2.5rem;
+      text-align: center;
+      background: rgba(0,0,0,0.15);
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    /* ── Button ─────────────────────────────────────────────── */
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2.25rem;
+      background: var(--cream);
+      color: var(--red-deep);
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn:hover { background: var(--tangerine); color: var(--dark); opacity: 1; }
+
+    .btn--outline {
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid rgba(245,234,216,0.45);
+    }
+
+    .btn--outline:hover { background: var(--cream); color: var(--red-deep); }
+
+    /* ── Contact cards ──────────────────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .contact-card {
+      text-align: center;
+      padding: 2.5rem 1.75rem;
+      border: 1px solid rgba(245,234,216,0.18);
+      background: rgba(0,0,0,0.12);
+    }
+
+    .contact-card__icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+    .contact-card__role {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.55;
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; }
+    .contact-card p { font-size: 0.85rem; }
+
+    /* ── Gifts ──────────────────────────────────────────────── */
+    .gifts-bank {
+      border: 1px solid rgba(245,234,216,0.18);
+      padding: 1.75rem;
+      margin-top: 2rem;
+      background: rgba(0,0,0,0.12);
+      font-size: 0.85rem;
+    }
+
+    .gifts-bank strong {
+      display: block;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
+      font-weight: 400;
+    }
+
+    /* ── Map placeholder ────────────────────────────────────── */
+    .map-ph {
+      background: rgba(0,0,0,0.2);
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 2.5rem;
+      border: 1px solid rgba(245,234,216,0.12);
+    }
+
+    .map-ph p { font-size: 0.75rem; opacity: 0.4; }
+
+    /* ── FAQ ────────────────────────────────────────────────── */
+    .faq { margin-top: 2rem; }
+
+    .faq-item { border-top: 1px solid rgba(245,234,216,0.15); }
+    .faq-item:last-child { border-bottom: 1px solid rgba(245,234,216,0.15); }
+
+    .faq-q {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--cream);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+      gap: 1rem;
+      user-select: none;
+    }
+
+    .faq-q::after {
+      content: '+';
+      font-family: var(--mono);
+      font-style: normal;
+      font-size: 1.1rem;
+      font-weight: 300;
+      opacity: 0.45;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+
+    .faq-item.open .faq-q::after { transform: rotate(45deg); }
+
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-item.open .faq-a { max-height: 300px; }
+    .faq-a p { padding-bottom: 1.25rem; font-size: 0.85rem; }
+
+    /* ── Footer ─────────────────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    footer .names {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 2.8rem;
+      color: var(--cream);
+      margin-bottom: 0.75rem;
+    }
+
+    footer p { font-size: 0.7rem; letter-spacing: 0.15em; opacity: 0.4; }
+
+    /* ── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero__right { height: 55vw; min-height: 280px; }
+
+      .hero__photo-overlay {
+        background: linear-gradient(to bottom, transparent 60%, var(--red-deep));
+      }
+
+      .hero__left {
+        padding: 3rem 1.5rem 4rem;
+        min-height: 100vh;
+      }
+
+      .nav__links { display: none; }
+      .nav__hamburger { display: flex; }
+      section { padding: 3.5rem 0; }
+      .photo-band { height: 260px; }
+      .carousel__track { height: 320px; }
+      .gc-mood { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 520px) {
+      .gc-mood { grid-template-columns: 1fr; }
+      .wavy-card__inner { padding: 2.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ NAV ═══════════════════════════════════════════════════ -->
+<nav class="nav">
+  <div class="nav__inner">
+    <div class="nav__logo">Bodine &amp; Felix</div>
+    <ul class="nav__links">
+      <li><a href="#ceremonie">Ceremonie</a></li>
+      <li><a href="#programma">Programma</a></li>
+      <li><a href="#dresscode">Dresscode</a></li>
+      <li><a href="#verblijf">Verblijf</a></li>
+      <li><a href="#gifts">Cadeaus</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#rsvp" class="nav__rsvp">RSVP</a></li>
+    </ul>
+    <button class="nav__hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav__mobile" id="mobileMenu">
+    <a href="#ceremonie"  onclick="closeMobile()">Ceremonie</a>
+    <a href="#programma"  onclick="closeMobile()">Programma</a>
+    <a href="#dresscode"  onclick="closeMobile()">Dresscode</a>
+    <a href="#verblijf"   onclick="closeMobile()">Verblijf</a>
+    <a href="#gifts"      onclick="closeMobile()">Cadeaus</a>
+    <a href="#contact"    onclick="closeMobile()">Contact</a>
+    <a href="#faq"        onclick="closeMobile()">FAQ</a>
+    <a href="#rsvp" class="nav__rsvp" onclick="closeMobile()">RSVP</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <!-- Left: wavy card -->
+  <div class="hero__left">
+    <div class="wavy-card">
+      <div class="wavy-card__outer">
+        <div class="wavy-card__inner">
+          <p class="hero__eyebrow">Je bent uitgenodigd voor het huwelijk van</p>
+          <h1 class="hero__names">Bodine &amp; Felix</h1>
+          <svg class="starburst" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="50" y1="2"  x2="50" y2="98" stroke="#f5ead8" stroke-width="1.5"/>
+            <line x1="2"  y1="50" x2="98" y2="50" stroke="#f5ead8" stroke-width="1.5"/>
+            <line x1="15" y1="15" x2="85" y2="85" stroke="#f5ead8" stroke-width="1.5"/>
+            <line x1="85" y1="15" x2="15" y2="85" stroke="#f5ead8" stroke-width="1.5"/>
+            <line x1="50" y1="2"  x2="85" y2="50" stroke="#f5ead8" stroke-width="1"/>
+            <line x1="85" y1="50" x2="50" y2="98" stroke="#f5ead8" stroke-width="1"/>
+            <line x1="50" y1="98" x2="15" y2="50" stroke="#f5ead8" stroke-width="1"/>
+            <line x1="15" y1="50" x2="50" y2="2"  stroke="#f5ead8" stroke-width="1"/>
+            <line x1="8"  y1="25" x2="92" y2="75" stroke="#f5ead8" stroke-width="0.7"/>
+            <line x1="25" y1="8"  x2="75" y2="92" stroke="#f5ead8" stroke-width="0.7"/>
+            <line x1="92" y1="25" x2="8"  y2="75" stroke="#f5ead8" stroke-width="0.7"/>
+            <line x1="75" y1="8"  x2="25" y2="92" stroke="#f5ead8" stroke-width="0.7"/>
+          </svg>
+          <p class="hero__date">22.08.2026</p>
+          <p class="hero__location">The HillTop · Barchem</p>
+        </div>
+      </div>
+    </div>
+    <a href="#rsvp" class="btn" style="margin-top:2rem;">RSVP</a>
+    <div class="hero__scroll">
+      <div class="hero__scroll-line"></div>
+      scroll
+    </div>
+  </div>
+
+  <!-- Right: photo -->
+  <div class="hero__right">
+    <img class="hero__photo" src="photos/carousel2.jpg" alt="Bodine en Felix" style="object-position: center 8%;" />
+    <div class="hero__photo-overlay"></div>
+  </div>
+</section>
+
+<!-- ══ PHOTO CAROUSEL ════════════════════════════════════════ -->
+<div class="carousel" id="carousel">
+  <div class="carousel__viewport" id="carouselViewport">
+    <div class="carousel__track" id="carouselTrack">
+      <div class="carousel__slide active"><img src="photos/new-ring2.jpg"      alt="Bodine & Felix — de ring!"   data-pos-mobile="center 30%" data-pos-desktop="center 28%" /></div>
+      <div class="carousel__slide"><img src="photos/new-horse.jpg"     alt="Bodine & Felix — paardrijden" data-pos-mobile="center 40%" data-pos-desktop="center 42%" /></div>
+      <div class="carousel__slide"><img src="photos/new-patagonia.jpg"  alt="Bodine & Felix — Patagonië"  data-pos-mobile="center 30%" data-pos-desktop="center 32%" /></div>
+      <div class="carousel__slide"><img src="photos/new-patagonia2.jpg" alt="Bodine & Felix — Fitz Roy"    data-pos-mobile="center 8%"  data-pos-desktop="center 10%" /></div>
+      <div class="carousel__slide"><img src="photos/new-runnera.jpg"    alt="Bodine & Felix — marathon"    data-pos-mobile="center 8%"  data-pos-desktop="center 10%" /></div>
+      <div class="carousel__slide"><img src="photos/new-alpaca.jpg"     alt="Bodine & Felix — alpaca"      data-pos-mobile="center 18%" data-pos-desktop="center 20%" /></div>
+    </div>
+  </div>
+
+  <button class="carousel__prev" id="carouselPrev">&#8592;</button>
+  <button class="carousel__next" id="carouselNext">&#8594;</button>
+
+  <div class="carousel__dots" id="carouselDots">
+    <button class="carousel__dot active"></button>
+    <button class="carousel__dot"></button>
+    <button class="carousel__dot"></button>
+    <button class="carousel__dot"></button>
+    <button class="carousel__dot"></button>
+    <button class="carousel__dot"></button>
+  </div>
+</div>
+
+<!-- ══ CEREMONIE ═════════════════════════════════════════════ -->
+<section id="ceremonie" class="section--mid">
+  <div class="section-inner">
+    <div class="ornament">
+      <div class="ornament__line"></div>
+      <div class="ornament__star">✦</div>
+      <div class="ornament__line"></div>
+    </div>
+    <span class="label">De grote dag</span>
+    <h2>Ceremonie</h2>
+    <p>
+      Het is zover — wij gaan trouwen! En we willen dat je erbij bent.
+      Op <strong style="color:var(--cream)">zaterdag 22 augustus 2026</strong> zeggen we ja
+      tegen elkaar op één van onze favoriete plekken: <strong style="color:var(--cream)">The HillTop</strong>
+      in Barchem, verscholen in de bossen van de Lochemse Berg.
+    </p>
+    <p>
+      Verwacht een dag vol warmte, lachen, lekker eten en dansen tot je benen het begeven.
+      We kunnen niet wachten om dit met jullie te vieren! 🧡
+    </p>
+
+    <div class="info-grid">
+      <div class="info-block">
+        <div class="info-block__title">Datum</div>
+        <p>Zaterdag 22 augustus 2026</p>
+      </div>
+      <div class="info-block">
+        <div class="info-block__title">Locatie</div>
+        <p>The HillTop<br />Zwiepseweg 19<br />7244 NA Barchem</p>
+      </div>
+      <div class="info-block">
+        <div class="info-block__title">Website</div>
+        <p><a href="https://www.thehilltop.nl/" target="_blank" style="color:var(--cream);">www.thehilltop.nl →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PHOTO BAND ════════════════════════════════════════════ -->
+<div class="photo-band">
+  <img src="photos/hilltop.jpg" alt="The HillTop — Zwiepseweg 19, Barchem" style="object-position:center 55%;" />
+</div>
+
+<!-- ══ PROGRAMMA ═════════════════════════════════════════════ -->
+<section id="programma" class="section--deep">
+  <div class="section-inner">
+    <span class="label">Hoe ziet de dag eruit?</span>
+    <h2>Programma &amp; Tijden</h2>
+    <p>Zet alvast deze tijden in je agenda — meer details volgen naarmate de dag nadert!</p>
+
+    <ul class="timeline">
+      <li class="timeline__item">
+        <div class="timeline__dot"></div>
+        <div class="timeline__time">13:00 – 13:30</div>
+        <div class="timeline__event">Inloop &amp; welkom</div>
+        <p class="timeline__desc">Kom binnen, pak een drankje en geniet van de sfeer bij The HillTop</p>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__dot"></div>
+        <div class="timeline__time">14:00</div>
+        <div class="timeline__event">Start ceremonie</div>
+        <p class="timeline__desc">Het grote moment — wij zeggen ja!</p>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__dot"></div>
+        <div class="timeline__time">Na de ceremonie</div>
+        <div class="timeline__event">Borrel</div>
+        <p class="timeline__desc">Proost op het bruidspaar — bubbels, knabbels en een hoop knuffels</p>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__dot"></div>
+        <div class="timeline__time">17:30</div>
+        <div class="timeline__event">Diner</div>
+        <p class="timeline__desc">Aanschuiven en genieten van een heerlijk diner</p>
+      </li>
+      <li class="timeline__item">
+        <div class="timeline__dot"></div>
+        <div class="timeline__time">21:00</div>
+        <div class="timeline__event">Feest &amp; dans 🕺</div>
+        <p class="timeline__desc">De dansvloer gaat open — avondgasten sluiten hierbij aan!</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ══ DRESSCODE ═════════════════════════════════════════════ -->
+<section id="dresscode" class="section--light">
+  <div class="section-inner">
+    <span class="label" style="color:rgba(26,10,6,0.5)">Dresscode</span>
+    <h2>Garden Chique</h2>
+    <p>
+      Denk: zomers, kleurrijk en een tikje feestelijk. Floaty jurken, linnen pakken, gedurfde kleuren — ga los!
+      Kleur is welkom, maar leg niet teveel nadruk op bloemenprint. 🌸
+    </p>
+    <p>
+      <strong style="color:var(--cream)">Let op:</strong> wit en crème zijn gereserveerd voor de bruid.
+      Voor de mannen: een licht(gekleurd) pak of blazer met chino past perfect in het plaatje.
+    </p>
+
+    <!-- Colour inspiration — playful bubbles -->
+    <div class="gc-bubbles">
+      <div class="gc-bubble gc-bubble--lg" style="background:#EAA239;" title="Tangerine">
+        <span>Tangerine</span>
+      </div>
+      <div class="gc-bubble gc-bubble--md" style="background:#E59793;" title="Baby Rose">
+        <span>Baby Rose</span>
+      </div>
+      <div class="gc-bubble gc-bubble--sm" style="background:#E8705A;" title="Coral">
+        <span>Coral</span>
+      </div>
+      <div class="gc-bubble gc-bubble--md" style="background:#8F9E25;" title="Leaves">
+        <span>Leaves</span>
+      </div>
+      <div class="gc-bubble gc-bubble--lg" style="background:#C3A5C1;" title="Wisteria">
+        <span>Wisteria</span>
+      </div>
+      <div class="gc-bubble gc-bubble--sm" style="background:#5A8C6E;" title="Garden">
+        <span>Garden</span>
+      </div>
+      <div class="gc-bubble gc-bubble--md" style="background:#97332C;" title="Mulberry">
+        <span>Mulberry</span>
+      </div>
+    </div>
+
+    <!-- Style keywords -->
+    <div class="gc-mood" style="margin-top:2.5rem;">
+      <div class="gc-mood__item">
+        <span class="gc-mood__icon">👗</span>
+        <div class="gc-mood__label">Dames</div>
+        <p class="gc-mood__desc">Maxi-jurk, midi-rok, floaty prints, bloemen, 3D details, laagjes</p>
+      </div>
+      <div class="gc-mood__item">
+        <span class="gc-mood__icon">🤵</span>
+        <div class="gc-mood__label">Heren</div>
+        <p class="gc-mood__desc">Licht pak, linnen blazer, chino, kleur mag (en wordt aangemoedigd!). Das? Hoeft niet.</p>
+      </div>
+      <div class="gc-mood__item">
+        <span class="gc-mood__icon">🚫</span>
+        <div class="gc-mood__label">Niet dragen</div>
+        <p class="gc-mood__desc">Wit of crème — dat is voor de bruid. Verder: alles mag!</p>
+      </div>
+      <div class="gc-mood__item" style="grid-column: 1 / -1; background: rgba(0,0,0,0.08); border: 1px solid rgba(26,10,6,0.15);">
+        <span class="gc-mood__icon">👠</span>
+        <div class="gc-mood__label">Let op: schoenen</div>
+        <p class="gc-mood__desc" style="max-width:520px;margin:0 auto;">Het grootste deel van de dag speelt zich buiten af op het gras. Naaldhakken zakken weg in het gras — niet comfortabel en ook niet goed voor de natuur. Tip: kies voor blokhakken of andere schoenen die niet wegzakken.</p>
+      </div>
+    </div>
+
+    <!-- Outfit inspiratie foto's -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:2.5rem;">
+      <div style="overflow:hidden;height:360px;">
+        <img src="photos/carousel1.jpg" alt="Garden Chique outfit inspiratie" style="width:100%;height:100%;object-fit:cover;object-position:center 8%;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+      </div>
+      <div style="overflow:hidden;height:360px;">
+        <img src="photos/couple-dressed.jpg" alt="Garden Chique outfit inspiratie" style="width:100%;height:100%;object-fit:cover;object-position:center 5%;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+      </div>
+      <div style="overflow:hidden;height:360px;">
+        <img src="photos/new-classy.jpg" alt="Garden Chique outfit inspiratie" style="width:100%;height:100%;object-fit:cover;object-position:center 5%;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- ══ VERBLIJF / HOTELS ═════════════════════════════════════ -->
+<section id="verblijf" class="section--mid">
+  <div class="section-inner--wide">
+    <span class="label">Overnachten</span>
+    <h2>Accommodatie &amp; Hotels</h2>
+    <p style="max-width:620px;">
+      Barchem ligt midden in het prachtige Achterhoekse boslandschap. Perfect om een
+      nachtje te blijven. Boek op tijd want het is zomers druk in de regio!
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card__badge">⭐⭐⭐⭐ Hotel · Barchem (direct om de hoek)</div>
+        <h3>Hotel de Lochemse Heuvels</h3>
+        <p>Barchem</p>
+        <hr />
+        <p>4-sterren boshotel pal in Barchem — dichter bij de locatie kom je niet. Rustig gelegen in het bos.</p>
+        <a href="https://www.hoteldelochemseheuvels.nl/" target="_blank" class="btn btn--outline" style="margin-top:1rem;font-size:0.58rem;">Bekijk hotel →</a>
+      </div>
+
+      <div class="card">
+        <div class="card__badge">🏠 B&amp;B &amp; hotels · omgeving Barchem</div>
+        <h3>Booking.com &amp; Airbnb</h3>
+        <p>Diverse opties in de directe omgeving</p>
+        <hr />
+        <p>Zoek op postcode <strong style="color:var(--cream)">7244 Barchem</strong> voor een breed aanbod van B&amp;B's, boerderijkamers en vakantiehuisjes.</p>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:1rem;">
+          <a href="https://www.booking.com/searchresults.nl.html?ss=Barchem" target="_blank" class="btn btn--outline" style="font-size:0.58rem;">Booking.com →</a>
+          <a href="https://www.airbnb.nl/s/Barchem--Nederland/homes" target="_blank" class="btn btn--outline" style="font-size:0.58rem;">Airbnb →</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card__badge">⛺ Camping · direct naast de locatie</div>
+        <h3>Heksenlaak &amp; camping opties</h3>
+        <p>Aan de overkant van de locatie</p>
+        <hr />
+        <p>Voor wie echt wil genieten: kampeer je de nacht! Campers en tentjes zijn welkom bij Heksenlaak, pal naast The HillTop. Avontuurlijk én superdichtbij.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ RSVP ══════════════════════════════════════════════════ -->
+<section id="rsvp" class="section--deep">
+  <div class="section-inner" style="text-align:center;">
+    <div class="ornament">
+      <div class="ornament__line"></div>
+      <div class="ornament__star">✦</div>
+      <div class="ornament__line"></div>
+    </div>
+    <span class="label">Aanmelden</span>
+    <h2>RSVP</h2>
+    <p style="max-width:480px;margin:0 auto;">
+      Laat ons uiterlijk <strong style="color:var(--cream)">1 juli 2026</strong> weten of je erbij bent.
+    </p>
+
+    <div class="rsvp-box">
+      <!-- Plak hier je Typeform embed code:
+      <div data-tf-live="JOUW_TYPEFORM_ID"></div>
+      <script src="//embed.typeform.com/next/embed.js"></script>
+      -->
+      <span style="font-size:2rem;">✉️</span>
+      <p style="opacity:0.6;font-size:0.82rem;max-width:360px;">
+        Plak hier je Typeform-embedcode,<br />of gebruik de knop hieronder.
+      </p>
+      <a href="https://www.typeform.com" target="_blank" class="btn">Aanmelden →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ KOE PHOTO BAND ═══════════════════════════════════════ -->
+<div class="koe-band">
+  <img src="photos/new-koe.jpg" alt="Bodine & Felix — Hollandser kan niet" />
+</div>
+
+<!-- ══ WEDDING GIFTS ═════════════════════════════════════════ -->
+<section id="gifts" class="section--mid">
+  <div class="section-inner">
+    <span class="label">Cadeaus</span>
+    <h2>Wedding Gifts</h2>
+    <p>
+      Jullie aanwezigheid is écht het mooiste cadeau. Maar voor wie toch iets wil geven:
+      een bijdrage aan onze huwelijksreis wordt enorm gewaardeerd! 🙏
+    </p>
+
+    <div class="gifts-bank">
+      <strong>Bankrekening</strong>
+      IBAN: <strong>NL[XX] [BANK] [0000 0000 00]</strong><br />
+      T.n.v.: [Naam]<br />
+      Omschrijving: <em>Cadeau Bodine &amp; Felix</em>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT / CEREMONIEMEESTERS ═══════════════════════════ -->
+<section id="contact" class="section--light">
+  <div class="section-inner">
+    <span class="label" style="color:rgba(26,10,6,0.5)">Vragen?</span>
+    <h2>Contactpersonen</h2>
+    <p>
+      Heb je een vraag over de dag, de locatie, het programma, of wil je gewoon even
+      kletsen? Onze ceremoniemeesters staan voor jullie klaar! 🌟
+    </p>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <span class="contact-card__icon">🌟</span>
+        <div class="contact-card__role">Ceremoniemaster</div>
+        <h3>Carlijn de Visser</h3>
+        <p>
+          📞 <a href="tel:+31641039826">+31 6 41 03 98 26</a><br />
+          ✉️ <a href="mailto:febo.best.wedding.ever@gmail.com">febo.best.wedding.ever@gmail.com</a>
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <span class="contact-card__icon">🌟</span>
+        <div class="contact-card__role">Ceremoniemaster</div>
+        <h3>Floris van der Zandt</h3>
+        <p>
+          📞 <a href="tel:+31614452845">+31 6 14 45 28 45</a><br />
+          ✉️ <a href="mailto:febo.best.wedding.ever@gmail.com">febo.best.wedding.ever@gmail.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ADRES & PARKEREN ══════════════════════════════════════ -->
+<section id="adres" class="section--deep">
+  <div class="section-inner">
+    <span class="label">Hoe kom ik er?</span>
+    <h2>Adres &amp; Parkeren</h2>
+
+    <div class="info-grid">
+      <div class="info-block">
+        <div class="info-block__title">Locatie</div>
+        <p>
+          The HillTop<br />
+          Zwiepseweg 19<br />
+          7244 NA Barchem<br /><br />
+          <a href="https://maps.google.com/?q=Zwiepseweg+19,+7244+NA+Barchem" target="_blank" style="color:var(--cream);">Open in Google Maps →</a>
+        </p>
+      </div>
+      <div class="info-block">
+        <div class="info-block__title">Parkeren</div>
+        <p>Aan de overkant van de locatie is een veld gereserveerd voor gasten om te parkeren. Vanaf de parking naar de locatie is het zo'n 7 minuten lopen.</p>
+      </div>
+      <div class="info-block">
+        <div class="info-block__title">Openbaar vervoer</div>
+        <p>
+          Station Lochem of Station Deventer<br /><br />
+          Let op: de locatie ligt in een natuurgebied en is niet op loopafstand van de stations. Houd hier rekening mee bij je planning.<br /><br />
+          <a href="https://9292.nl" target="_blank" style="color:var(--cream);">Check 9292ov →</a>
+        </p>
+      </div>
+    </div>
+
+    <div style="margin-top:2.5rem;overflow:hidden;border:1px solid rgba(245,234,216,0.12);">
+      <iframe
+        src="https://maps.google.com/maps?q=52.1370228,6.4420794&z=16&output=embed&hl=nl"
+        width="100%"
+        height="340"
+        style="border:0;display:block;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="The HillTop — Zwiepseweg 19, Barchem">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ═══════════════════════════════════════════════════ -->
+<section id="faq" class="section--light">
+  <div class="section-inner">
+    <div class="ornament">
+      <div class="ornament__line" style="background:rgba(26,10,6,0.15);"></div>
+      <div class="ornament__star" style="color:rgba(26,10,6,0.3);">✦</div>
+      <div class="ornament__line" style="background:rgba(26,10,6,0.15);"></div>
+    </div>
+    <span class="label" style="color:rgba(26,10,6,0.5);">Veelgestelde vragen</span>
+    <h2>FAQ</h2>
+    <p>Staat je vraag er niet bij? Mail of app onze ceremoniemeesters!</p>
+
+    <div class="faq" style="--faq-border:rgba(26,10,6,0.15);">
+
+      <div class="faq-item" style="border-color:rgba(26,10,6,0.15);">
+        <div class="faq-q" style="color:var(--dark);">Welk dagdeel ben ik uitgenodigd?</div>
+        <div class="faq-a">
+          <p style="color:rgba(26,10,6,0.75);">Dat staat op je uitnodiging! Even kort uitgelegd:<br /><br />
+          <strong>Hele dag gasten</strong> — welkom van inloop t/m feest (de volledige dag verwacht 🎉)<br />
+          <strong>Daggasten / receptiegasten</strong> — de hele dag aanwezig, maar zonder diner. Verwacht tot ongeveer 17:30.<br />
+          <strong>Avondgasten / feestgasten</strong> — welkom vanaf 21:00 voor het feest &amp; dans 🕺<br /><br />
+          Twijfel je? Neem even contact op met onze ceremoniemeesters!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" style="border-color:rgba(26,10,6,0.15);">
+        <div class="faq-q" style="color:var(--dark);">Wanneer moet ik me aanmelden?</div>
+        <div class="faq-a">
+          <p style="color:rgba(26,10,6,0.75);">Laat het ons uiterlijk <strong>1 juli 2026</strong> weten. Aanmelden kan via het RSVP-formulier op deze pagina.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" style="border-color:rgba(26,10,6,0.15);">
+        <div class="faq-q" style="color:var(--dark);">Mag ik een partner meenemen?</div>
+        <div class="faq-a">
+          <p style="color:rgba(26,10,6,0.75);">Je uitnodiging is persoonlijk. Als je partner ook is uitgenodigd, staat dat op je uitnodiging. Twijfel je? App even naar onze ceremoniemeesters!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" style="border-color:rgba(26,10,6,0.15);">
+        <div class="faq-q" style="color:var(--dark);">Hoe zit het met dieetwensen of allergieën?</div>
+        <div class="faq-a">
+          <p style="color:rgba(26,10,6,0.75);">Geef dit op via het RSVP-formulier. We houden rekening met vegetarisch, veganistisch, glutenvrij en andere wensen of allergieën.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" style="border-color:rgba(26,10,6,0.15);">
+        <div class="faq-q" style="color:var(--dark);">Mag ik foto's maken tijdens de ceremonie?</div>
+        <div class="faq-a">
+          <p style="color:rgba(26,10,6,0.75);">We vragen je om tijdens de ceremonie even je telefoon weg te leggen zodat iedereen er écht bij is. Onze fotograaf legt alles vast. Na de ceremonie: ga je gang! 📸<br /><br />Foto's en video's van de dag mogen worden gedeeld op social media — maar wacht even tot wij ze zelf als eerste hebben gepost. Dan mag jij ze daarna volop liken en delen!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" style="border-color:rgba(26,10,6,0.15);">
+        <div class="faq-q" style="color:var(--dark);">Waar kan ik overnachten?</div>
+        <div class="faq-a">
+          <p style="color:rgba(26,10,6,0.75);">Zie de sectie "Accommodatie &amp; Hotels" hierboven voor tips. Hotel de Lochemse Heuvels is een aanrader — pal in Barchem. Of sla je tent op bij Heksenlaak, direct naast de locatie!</p>
+        </div>
+      </div>
+
+      <div class="faq-item" style="border-color:rgba(26,10,6,0.15);">
+        <div class="faq-q" style="color:var(--dark);">Wat is de dresscode precies?</div>
+        <div class="faq-a">
+          <p style="color:rgba(26,10,6,0.75);">Garden Chique! Denk: kleurrijk, zomers, een beetje feestelijk. Bloemenprints, floaty stoffen, gedurfde kleuren. Zie de "Garden Chique" sectie voor alle details en kleurinspiratie.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ FOOTER ════════════════════════════════════════════════ -->
+<footer>
+  <div class="names">Bodine &amp; Felix</div>
+  <p>22.08.2026 · The HillTop · Barchem</p>
+  <p style="margin-top:0.5rem;">febowedding.nl &nbsp;·&nbsp; Met liefde gemaakt 🧡</p>
+</footer>
+
+<!-- ══ SCRIPTS ════════════════════════════════════════════════ -->
+<script>
+  // ── Mobile nav ──────────────────────────────────────────
+  document.getElementById('hamburger').addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  });
+  function closeMobile() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  // ── Responsive carousel object-position ─────────────────
+  function applyCarouselPositions() {
+    const isDesktop = window.innerWidth > 860;
+    document.querySelectorAll('.carousel__slide img').forEach(img => {
+      img.style.objectPosition = isDesktop
+        ? (img.dataset.posDesktop || 'center center')
+        : (img.dataset.posMobile  || 'center center');
+    });
+  }
+  applyCarouselPositions();
+  window.addEventListener('resize', applyCarouselPositions);
+
+  // ── Desktop 3-up: translate track so active is centred ──
+  function updateDesktopTrack() {
+    if (window.innerWidth <= 860) return;
+    const viewport   = document.getElementById('carouselViewport');
+    const vpWidth    = viewport ? viewport.offsetWidth : window.innerWidth - 160;
+    const slideWidth = vpWidth * 0.60;
+    const gap        = 20;
+    // offset so active slide is centred in viewport
+    const centreOffset = (vpWidth - slideWidth) / 2;
+    const translateX   = centreOffset - current * (slideWidth + gap);
+    track.style.transform = `translateX(${translateX}px)`;
+    // dim non-active slides
+    slides.forEach((s, i) => s.classList.toggle('active', i === current));
+  }
+
+  // ── Carousel ─────────────────────────────────────────────
+  const track  = document.getElementById('carouselTrack');
+  const dots   = document.querySelectorAll('.carousel__dot');
+  const slides = document.querySelectorAll('.carousel__slide');
+  let current  = 0;
+
+  function goTo(n) {
+    current = (n + slides.length) % slides.length;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    if (window.innerWidth > 860) {
+      updateDesktopTrack();
+    } else {
+      track.style.transform = `translateX(-${current * 100}%)`;
+      slides.forEach((s, i) => s.classList.toggle('active', i === current));
+    }
+  }
+
+  window.addEventListener('resize', () => goTo(current));
+
+  document.getElementById('carouselNext').addEventListener('click', () => goTo(current + 1));
+  document.getElementById('carouselPrev').addEventListener('click', () => goTo(current - 1));
+  dots.forEach((d, i) => d.addEventListener('click', () => goTo(i)));
+
+  // initialise correct position on load
+  goTo(0);
+
+  // ── FAQ accordion ─────────────────────────────────────────
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item   = q.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>
