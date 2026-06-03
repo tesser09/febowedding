@@ -282,21 +282,22 @@
       margin-bottom: 1.5rem;
     }
 
+    /* ── Sun icon (flame sun from invitation) ──────────────────── */
     .starburst {
-      width: 44px;
-      height: 44px;
+      width: 52px;
+      height: 52px;
       margin: 0 auto 1.5rem;
-      opacity: 0.5;
+      color: rgba(245,234,216,0.7);
     }
 
-    /* ── Sun ornament (used throughout site) ──────────────────── */
     .sun-sm {
-      width: 30px;
-      height: 30px;
-      color: rgba(245,234,216,0.38);
+      width: 32px;
+      height: 32px;
+      color: rgba(245,234,216,0.45);
       flex-shrink: 0;
+      display: block;
     }
-    .section--light .sun-sm { color: rgba(26,10,6,0.2); }
+    .section--light .sun-sm { color: rgba(26,10,6,0.22); }
 
     /* Large decorative background sun */
     .sun-bg-wrap {
@@ -981,6 +982,36 @@
 </head>
 <body>
 
+<!-- ══ SVG DEFS ══════════════════════════════════════════════ -->
+<!-- Flame sun icon replicating the invitation motif           -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none;" aria-hidden="true">
+  <defs>
+    <symbol id="sun-icon" viewBox="0 0 200 200">
+      <g transform="translate(100,100)" fill="currentColor">
+        <!-- 13 wavy flame rays, each curling slightly (organic swirl) -->
+        <path d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
+        <path transform="rotate(27.7)"  d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
+        <path transform="rotate(55.4)"  d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
+        <path transform="rotate(83.1)"  d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
+        <path transform="rotate(110.8)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
+        <path transform="rotate(138.5)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
+        <path transform="rotate(166.2)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
+        <path transform="rotate(193.8)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
+        <path transform="rotate(221.5)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
+        <path transform="rotate(249.2)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
+        <path transform="rotate(276.9)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
+        <path transform="rotate(304.6)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
+        <path transform="rotate(332.3)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
+        <!-- Centre circle covering ray bases -->
+        <circle r="33"/>
+        <!-- Spiral swirl in centre -->
+        <path d="M 2,0 C 2,-8 9,-13 16,-9 C 23,-4 23,7 15,13 C 6,19-8,15-12,4 C-17,-9-9,-22 5,-24 C 20,-26 30,-12 28,5 C 26,20 12,28-3,24"
+              fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="4.5" stroke-linecap="round"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
 <!-- ══ NAV ═══════════════════════════════════════════════════ -->
 <nav class="nav">
   <div class="nav__inner">
@@ -1018,20 +1049,7 @@
         <div class="wavy-card__inner">
           <p class="hero__eyebrow">Je bent uitgenodigd voor het huwelijk van</p>
           <h1 class="hero__names">Bodine &amp; Felix</h1>
-          <svg class="starburst" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line x1="50" y1="2"  x2="50" y2="98" stroke="#f5ead8" stroke-width="1.5"/>
-            <line x1="2"  y1="50" x2="98" y2="50" stroke="#f5ead8" stroke-width="1.5"/>
-            <line x1="15" y1="15" x2="85" y2="85" stroke="#f5ead8" stroke-width="1.5"/>
-            <line x1="85" y1="15" x2="15" y2="85" stroke="#f5ead8" stroke-width="1.5"/>
-            <line x1="50" y1="2"  x2="85" y2="50" stroke="#f5ead8" stroke-width="1"/>
-            <line x1="85" y1="50" x2="50" y2="98" stroke="#f5ead8" stroke-width="1"/>
-            <line x1="50" y1="98" x2="15" y2="50" stroke="#f5ead8" stroke-width="1"/>
-            <line x1="15" y1="50" x2="50" y2="2"  stroke="#f5ead8" stroke-width="1"/>
-            <line x1="8"  y1="25" x2="92" y2="75" stroke="#f5ead8" stroke-width="0.7"/>
-            <line x1="25" y1="8"  x2="75" y2="92" stroke="#f5ead8" stroke-width="0.7"/>
-            <line x1="92" y1="25" x2="8"  y2="75" stroke="#f5ead8" stroke-width="0.7"/>
-            <line x1="75" y1="8"  x2="25" y2="92" stroke="#f5ead8" stroke-width="0.7"/>
-          </svg>
+          <svg class="starburst" aria-hidden="true"><use href="#sun-icon"/></svg>
           <p class="hero__date">22.08.2026</p>
           <p class="hero__location">The HillTop · Barchem</p>
         </div>
@@ -1056,11 +1074,11 @@
   <div class="section-inner">
     <div class="ornament">
       <div class="ornament__line"></div>
-      <svg class="sun-sm" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/><line x1="9" y1="27" x2="91" y2="73" stroke="currentColor" stroke-width="0.8"/><line x1="27" y1="9" x2="73" y2="91" stroke="currentColor" stroke-width="0.8"/><line x1="91" y1="27" x2="9" y2="73" stroke="currentColor" stroke-width="0.8"/><line x1="73" y1="9" x2="27" y2="91" stroke="currentColor" stroke-width="0.8"/></svg>
+      <svg class="sun-sm" aria-hidden="true"><use href="#sun-icon"/></svg>
       <div class="ornament__line"></div>
     </div>
     <span class="label">De grote dag</span>
-    <h2>Ceremonie</h2>
+    <h2>Huwelijk Bodine &amp; Felix</h2>
     <p>
       Het is zover — wij gaan trouwen! En we willen dat je erbij bent.
       Op <strong style="color:var(--cream)">zaterdag 22 augustus 2026</strong> zeggen we ja
@@ -1089,11 +1107,6 @@
   </div>
 </section>
 
-<!-- ══ PHOTO BAND ════════════════════════════════════════════ -->
-<div class="photo-band">
-  <img src="photos/hilltop.jpg" alt="The HillTop — Zwiepseweg 19, Barchem" style="object-position:center 55%;" />
-</div>
-
 <!-- ══ PHOTO CAROUSEL ════════════════════════════════════════ -->
 <div class="carousel" id="carousel">
   <div class="carousel__viewport" id="carouselViewport">
@@ -1118,6 +1131,11 @@
     <button class="carousel__dot"></button>
     <button class="carousel__dot"></button>
   </div>
+</div>
+
+<!-- ══ PHOTO BAND ════════════════════════════════════════════ -->
+<div class="photo-band">
+  <img src="photos/hilltop.jpg" alt="The HillTop — Zwiepseweg 19, Barchem" style="object-position:center 40%;" />
 </div>
 
 <!-- ══ PROGRAMMA ═════════════════════════════════════════════ -->
@@ -1169,36 +1187,11 @@
     <h2>Garden Chic</h2>
     <p>
       Feestelijk maar niet formeel, moeiteloos maar niet casual.
-      Denk: vrolijk, zomers en feestelijk.
+      Denk: vrolijk, zomers en feestelijk. Wit en crème zijn gereserveerd voor de bruid.
     </p>
     <p>
-      <strong>Let op:</strong> wit en crème zijn gereserveerd voor de bruid.
-      Voor de heren: een licht pak, linnen blazer of chino past perfect. Das? Hoeft niet.
+      <strong>Let op schoenen:</strong> het grootste deel van de dag speelt zich buiten af op het gras. Naaldhakken zakken weg — kies voor blokhakken of andere schoenen die niet wegzakken.
     </p>
-
-    <!-- Style cards -->
-    <div class="gc-mood" style="margin-top:2.5rem;">
-      <div class="gc-mood__item">
-        <svg class="sun-sm" style="margin:0 auto 0.6rem;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/></svg>
-        <div class="gc-mood__label">Dames</div>
-        <p class="gc-mood__desc">Maxi-jurk, midi-rok, floaty prints, 3D details, laagjes</p>
-      </div>
-      <div class="gc-mood__item">
-        <svg class="sun-sm" style="margin:0 auto 0.6rem;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/></svg>
-        <div class="gc-mood__label">Heren</div>
-        <p class="gc-mood__desc">Licht pak, linnen blazer, chino — kleur wordt aangemoedigd. Das hoeft niet.</p>
-      </div>
-      <div class="gc-mood__item">
-        <svg class="sun-sm" style="margin:0 auto 0.6rem;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/></svg>
-        <div class="gc-mood__label">Niet dragen</div>
-        <p class="gc-mood__desc">Wit of crème — dat is voor de bruid. Verder: alles mag!</p>
-      </div>
-      <div class="gc-mood__item" style="grid-column: 1 / -1; background: rgba(0,0,0,0.08); border: 1px solid rgba(26,10,6,0.15);">
-        <svg class="sun-sm" style="margin:0 auto 0.6rem;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/></svg>
-        <div class="gc-mood__label">Let op: schoenen</div>
-        <p class="gc-mood__desc" style="max-width:520px;margin:0 auto;">Het grootste deel van de dag speelt zich buiten af op het gras. Naaldhakken zakken weg — niet comfortabel. Tip: kies voor blokhakken of andere schoenen die niet wegzakken.</p>
-      </div>
-    </div>
 
     <!-- Outfit inspiratie foto's -->
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:2.5rem;">
@@ -1262,12 +1255,12 @@
 <section id="rsvp" class="section--deep" style="position:relative;overflow:hidden;">
   <!-- Background sun decoration -->
   <div class="sun-bg-wrap" aria-hidden="true">
-    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="50" y1="2" x2="50" y2="98" stroke="currentColor" stroke-width="1.5"/><line x1="2" y1="50" x2="98" y2="50" stroke="currentColor" stroke-width="1.5"/><line x1="15" y1="15" x2="85" y2="85" stroke="currentColor" stroke-width="1.5"/><line x1="85" y1="15" x2="15" y2="85" stroke="currentColor" stroke-width="1.5"/><line x1="50" y1="2" x2="85" y2="50" stroke="currentColor" stroke-width="1"/><line x1="85" y1="50" x2="50" y2="98" stroke="currentColor" stroke-width="1"/><line x1="50" y1="98" x2="15" y2="50" stroke="currentColor" stroke-width="1"/><line x1="15" y1="50" x2="50" y2="2" stroke="currentColor" stroke-width="1"/><line x1="8" y1="25" x2="92" y2="75" stroke="currentColor" stroke-width="0.7"/><line x1="25" y1="8" x2="75" y2="92" stroke="currentColor" stroke-width="0.7"/><line x1="92" y1="25" x2="8" y2="75" stroke="currentColor" stroke-width="0.7"/><line x1="75" y1="8" x2="25" y2="92" stroke="currentColor" stroke-width="0.7"/></svg>
+    <svg viewBox="0 0 200 200"><use href="#sun-icon"/></svg>
   </div>
   <div class="section-inner" style="text-align:center;position:relative;">
     <div class="ornament">
       <div class="ornament__line"></div>
-      <svg class="sun-sm" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/><line x1="9" y1="27" x2="91" y2="73" stroke="currentColor" stroke-width="0.8"/><line x1="27" y1="9" x2="73" y2="91" stroke="currentColor" stroke-width="0.8"/><line x1="91" y1="27" x2="9" y2="73" stroke="currentColor" stroke-width="0.8"/><line x1="73" y1="9" x2="27" y2="91" stroke="currentColor" stroke-width="0.8"/></svg>
+      <svg class="sun-sm" aria-hidden="true"><use href="#sun-icon"/></svg>
       <div class="ornament__line"></div>
     </div>
     <span class="label">Aanmelden</span>
@@ -1325,7 +1318,7 @@
 
     <div class="contact-grid">
       <div class="contact-card">
-        <svg class="sun-sm" style="margin:0 auto 1rem;color:rgba(245,234,216,0.35);" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/></svg>
+        <svg class="sun-sm" style="margin:0 auto 1rem;" aria-hidden="true"><use href="#sun-icon"/></svg>
         <div class="contact-card__role">Ceremoniemaster</div>
         <h3>Carlijn de Visser</h3>
         <p>
@@ -1335,7 +1328,7 @@
       </div>
 
       <div class="contact-card">
-        <svg class="sun-sm" style="margin:0 auto 1rem;color:rgba(245,234,216,0.35);" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/></svg>
+        <svg class="sun-sm" style="margin:0 auto 1rem;" aria-hidden="true"><use href="#sun-icon"/></svg>
         <div class="contact-card__role">Ceremoniemaster</div>
         <h3>Floris van der Zandt</h3>
         <p>
@@ -1398,7 +1391,7 @@
   <div class="section-inner">
     <div class="ornament">
       <div class="ornament__line" style="background:rgba(26,10,6,0.15);"></div>
-      <svg class="sun-sm" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/><line x1="9" y1="27" x2="91" y2="73" stroke="currentColor" stroke-width="0.8"/><line x1="27" y1="9" x2="73" y2="91" stroke="currentColor" stroke-width="0.8"/><line x1="91" y1="27" x2="9" y2="73" stroke="currentColor" stroke-width="0.8"/><line x1="73" y1="9" x2="27" y2="91" stroke="currentColor" stroke-width="0.8"/></svg>
+      <svg class="sun-sm" aria-hidden="true"><use href="#sun-icon"/></svg>
       <div class="ornament__line" style="background:rgba(26,10,6,0.15);"></div>
     </div>
     <span class="label" style="color:rgba(26,10,6,0.5);">Veelgestelde vragen</span>
@@ -1467,7 +1460,7 @@
 
 <!-- ══ FOOTER ════════════════════════════════════════════════ -->
 <footer>
-  <svg style="width:28px;height:28px;opacity:0.25;margin-bottom:1.5rem;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="2" x2="50" y2="98" stroke="#f5ead8" stroke-width="2"/><line x1="2" y1="50" x2="98" y2="50" stroke="#f5ead8" stroke-width="2"/><line x1="15" y1="15" x2="85" y2="85" stroke="#f5ead8" stroke-width="2"/><line x1="85" y1="15" x2="15" y2="85" stroke="#f5ead8" stroke-width="2"/><line x1="50" y1="2" x2="85" y2="50" stroke="#f5ead8" stroke-width="1.2"/><line x1="85" y1="50" x2="50" y2="98" stroke="#f5ead8" stroke-width="1.2"/><line x1="50" y1="98" x2="15" y2="50" stroke="#f5ead8" stroke-width="1.2"/><line x1="15" y1="50" x2="50" y2="2" stroke="#f5ead8" stroke-width="1.2"/><line x1="8" y1="25" x2="92" y2="75" stroke="#f5ead8" stroke-width="0.8"/><line x1="25" y1="8" x2="75" y2="92" stroke="#f5ead8" stroke-width="0.8"/><line x1="92" y1="25" x2="8" y2="75" stroke="#f5ead8" stroke-width="0.8"/><line x1="75" y1="8" x2="25" y2="92" stroke="#f5ead8" stroke-width="0.8"/></svg>
+  <svg style="width:34px;height:34px;opacity:0.35;margin-bottom:1.5rem;color:var(--cream);" aria-hidden="true"><use href="#sun-icon"/></svg>
   <div class="names">Bodine &amp; Felix</div>
   <p>22.08.2026 · The HillTop · Barchem</p>
   <p style="margin-top:0.5rem;">febowedding.nl &nbsp;·&nbsp; Met liefde gemaakt</p>
