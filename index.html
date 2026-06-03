@@ -289,6 +289,32 @@
       opacity: 0.5;
     }
 
+    /* ── Sun ornament (used throughout site) ──────────────────── */
+    .sun-sm {
+      width: 30px;
+      height: 30px;
+      color: rgba(245,234,216,0.38);
+      flex-shrink: 0;
+    }
+    .section--light .sun-sm { color: rgba(26,10,6,0.2); }
+
+    /* Large decorative background sun */
+    .sun-bg-wrap {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .sun-bg-wrap svg {
+      width: min(60vw, 480px);
+      height: min(60vw, 480px);
+      opacity: 0.04;
+      color: var(--cream);
+    }
+
     .hero__date {
       font-size: 0.82rem;
       font-weight: 400;
@@ -1025,38 +1051,12 @@
   </div>
 </section>
 
-<!-- ══ PHOTO CAROUSEL ════════════════════════════════════════ -->
-<div class="carousel" id="carousel">
-  <div class="carousel__viewport" id="carouselViewport">
-    <div class="carousel__track" id="carouselTrack">
-      <div class="carousel__slide active"><img src="photos/new-ring2.jpg"      alt="Bodine & Felix — de ring!"   data-pos-mobile="center 30%" data-pos-desktop="center 28%" /></div>
-      <div class="carousel__slide"><img src="photos/new-horse.jpg"     alt="Bodine & Felix — paardrijden" data-pos-mobile="center 40%" data-pos-desktop="center 42%" /></div>
-      <div class="carousel__slide"><img src="photos/new-patagonia.jpg"  alt="Bodine & Felix — Patagonië"  data-pos-mobile="center 30%" data-pos-desktop="center 32%" /></div>
-      <div class="carousel__slide"><img src="photos/new-patagonia2.jpg" alt="Bodine & Felix — Fitz Roy"    data-pos-mobile="center 8%"  data-pos-desktop="center 10%" /></div>
-      <div class="carousel__slide"><img src="photos/new-runnera.jpg"    alt="Bodine & Felix — marathon"    data-pos-mobile="center 8%"  data-pos-desktop="center 10%" /></div>
-      <div class="carousel__slide"><img src="photos/new-alpaca.jpg"     alt="Bodine & Felix — alpaca"      data-pos-mobile="center 18%" data-pos-desktop="center 20%" /></div>
-    </div>
-  </div>
-
-  <button class="carousel__prev" id="carouselPrev">&#8592;</button>
-  <button class="carousel__next" id="carouselNext">&#8594;</button>
-
-  <div class="carousel__dots" id="carouselDots">
-    <button class="carousel__dot active"></button>
-    <button class="carousel__dot"></button>
-    <button class="carousel__dot"></button>
-    <button class="carousel__dot"></button>
-    <button class="carousel__dot"></button>
-    <button class="carousel__dot"></button>
-  </div>
-</div>
-
 <!-- ══ CEREMONIE ═════════════════════════════════════════════ -->
 <section id="ceremonie" class="section--mid">
   <div class="section-inner">
     <div class="ornament">
       <div class="ornament__line"></div>
-      <div class="ornament__star">✦</div>
+      <svg class="sun-sm" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/><line x1="9" y1="27" x2="91" y2="73" stroke="currentColor" stroke-width="0.8"/><line x1="27" y1="9" x2="73" y2="91" stroke="currentColor" stroke-width="0.8"/><line x1="91" y1="27" x2="9" y2="73" stroke="currentColor" stroke-width="0.8"/><line x1="73" y1="9" x2="27" y2="91" stroke="currentColor" stroke-width="0.8"/></svg>
       <div class="ornament__line"></div>
     </div>
     <span class="label">De grote dag</span>
@@ -1069,7 +1069,7 @@
     </p>
     <p>
       Verwacht een dag vol warmte, lachen, lekker eten en dansen tot je benen het begeven.
-      We kunnen niet wachten om dit met jullie te vieren! 🧡
+      We kunnen niet wachten om dit met jullie te vieren!
     </p>
 
     <div class="info-grid">
@@ -1092,6 +1092,32 @@
 <!-- ══ PHOTO BAND ════════════════════════════════════════════ -->
 <div class="photo-band">
   <img src="photos/hilltop.jpg" alt="The HillTop — Zwiepseweg 19, Barchem" style="object-position:center 55%;" />
+</div>
+
+<!-- ══ PHOTO CAROUSEL ════════════════════════════════════════ -->
+<div class="carousel" id="carousel">
+  <div class="carousel__viewport" id="carouselViewport">
+    <div class="carousel__track" id="carouselTrack">
+      <div class="carousel__slide active"><img src="photos/new-ring2.jpg"      alt="Bodine & Felix — de ring!"   data-pos-mobile="center 18%" data-pos-desktop="center 28%" /></div>
+      <div class="carousel__slide"><img src="photos/new-horse.jpg"     alt="Bodine & Felix — paardrijden" data-pos-mobile="center 30%" data-pos-desktop="center 42%" /></div>
+      <div class="carousel__slide"><img src="photos/new-patagonia.jpg"  alt="Bodine & Felix — Patagonië"  data-pos-mobile="center 20%" data-pos-desktop="center 32%" /></div>
+      <div class="carousel__slide"><img src="photos/new-patagonia2.jpg" alt="Bodine & Felix — Fitz Roy"    data-pos-mobile="center 10%" data-pos-desktop="center 10%" /></div>
+      <div class="carousel__slide"><img src="photos/new-runnera.jpg"    alt="Bodine & Felix — marathon"    data-pos-mobile="center 10%" data-pos-desktop="center 10%" /></div>
+      <div class="carousel__slide"><img src="photos/new-alpaca.jpg"     alt="Bodine & Felix — alpaca"      data-pos-mobile="center 15%" data-pos-desktop="center 20%" /></div>
+    </div>
+  </div>
+
+  <button class="carousel__prev" id="carouselPrev">&#8592;</button>
+  <button class="carousel__next" id="carouselNext">&#8594;</button>
+
+  <div class="carousel__dots" id="carouselDots">
+    <button class="carousel__dot active"></button>
+    <button class="carousel__dot"></button>
+    <button class="carousel__dot"></button>
+    <button class="carousel__dot"></button>
+    <button class="carousel__dot"></button>
+    <button class="carousel__dot"></button>
+  </div>
 </div>
 
 <!-- ══ PROGRAMMA ═════════════════════════════════════════════ -->
@@ -1129,7 +1155,7 @@
       <li class="timeline__item">
         <div class="timeline__dot"></div>
         <div class="timeline__time">21:00</div>
-        <div class="timeline__event">Feest &amp; dans 🕺</div>
+        <div class="timeline__event">Feest &amp; dans</div>
         <p class="timeline__desc">De dansvloer gaat open — avondgasten sluiten hierbij aan!</p>
       </li>
     </ul>
@@ -1140,81 +1166,54 @@
 <section id="dresscode" class="section--light">
   <div class="section-inner">
     <span class="label" style="color:rgba(26,10,6,0.5)">Dresscode</span>
-    <h2>Garden Chique</h2>
+    <h2>Garden Chic</h2>
     <p>
-      Denk: zomers, kleurrijk en een tikje feestelijk. Floaty jurken, linnen pakken, gedurfde kleuren — ga los!
-      Kleur is welkom, maar leg niet teveel nadruk op bloemenprint. 🌸
+      Feestelijk maar niet formeel, moeiteloos maar niet casual.
+      Denk: vrolijk, zomers en feestelijk.
     </p>
     <p>
-      <strong style="color:var(--cream)">Let op:</strong> wit en crème zijn gereserveerd voor de bruid.
-      Voor de mannen: een licht(gekleurd) pak of blazer met chino past perfect in het plaatje.
+      <strong>Let op:</strong> wit en crème zijn gereserveerd voor de bruid.
+      Voor de heren: een licht pak, linnen blazer of chino past perfect. Das? Hoeft niet.
     </p>
 
-    <!-- Colour inspiration — playful bubbles -->
-    <div class="gc-bubbles">
-      <div class="gc-bubble gc-bubble--lg" style="background:#EAA239;" title="Tangerine">
-        <span>Tangerine</span>
-      </div>
-      <div class="gc-bubble gc-bubble--md" style="background:#E59793;" title="Baby Rose">
-        <span>Baby Rose</span>
-      </div>
-      <div class="gc-bubble gc-bubble--sm" style="background:#E8705A;" title="Coral">
-        <span>Coral</span>
-      </div>
-      <div class="gc-bubble gc-bubble--md" style="background:#8F9E25;" title="Leaves">
-        <span>Leaves</span>
-      </div>
-      <div class="gc-bubble gc-bubble--lg" style="background:#C3A5C1;" title="Wisteria">
-        <span>Wisteria</span>
-      </div>
-      <div class="gc-bubble gc-bubble--sm" style="background:#5A8C6E;" title="Garden">
-        <span>Garden</span>
-      </div>
-      <div class="gc-bubble gc-bubble--md" style="background:#97332C;" title="Mulberry">
-        <span>Mulberry</span>
-      </div>
-    </div>
-
-    <!-- Style keywords -->
+    <!-- Style cards -->
     <div class="gc-mood" style="margin-top:2.5rem;">
       <div class="gc-mood__item">
-        <span class="gc-mood__icon">👗</span>
+        <svg class="sun-sm" style="margin:0 auto 0.6rem;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/></svg>
         <div class="gc-mood__label">Dames</div>
-        <p class="gc-mood__desc">Maxi-jurk, midi-rok, floaty prints, bloemen, 3D details, laagjes</p>
+        <p class="gc-mood__desc">Maxi-jurk, midi-rok, floaty prints, 3D details, laagjes</p>
       </div>
       <div class="gc-mood__item">
-        <span class="gc-mood__icon">🤵</span>
+        <svg class="sun-sm" style="margin:0 auto 0.6rem;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/></svg>
         <div class="gc-mood__label">Heren</div>
-        <p class="gc-mood__desc">Licht pak, linnen blazer, chino, kleur mag (en wordt aangemoedigd!). Das? Hoeft niet.</p>
+        <p class="gc-mood__desc">Licht pak, linnen blazer, chino — kleur wordt aangemoedigd. Das hoeft niet.</p>
       </div>
       <div class="gc-mood__item">
-        <span class="gc-mood__icon">🚫</span>
+        <svg class="sun-sm" style="margin:0 auto 0.6rem;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/></svg>
         <div class="gc-mood__label">Niet dragen</div>
         <p class="gc-mood__desc">Wit of crème — dat is voor de bruid. Verder: alles mag!</p>
       </div>
       <div class="gc-mood__item" style="grid-column: 1 / -1; background: rgba(0,0,0,0.08); border: 1px solid rgba(26,10,6,0.15);">
-        <span class="gc-mood__icon">👠</span>
+        <svg class="sun-sm" style="margin:0 auto 0.6rem;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/></svg>
         <div class="gc-mood__label">Let op: schoenen</div>
-        <p class="gc-mood__desc" style="max-width:520px;margin:0 auto;">Het grootste deel van de dag speelt zich buiten af op het gras. Naaldhakken zakken weg in het gras — niet comfortabel en ook niet goed voor de natuur. Tip: kies voor blokhakken of andere schoenen die niet wegzakken.</p>
+        <p class="gc-mood__desc" style="max-width:520px;margin:0 auto;">Het grootste deel van de dag speelt zich buiten af op het gras. Naaldhakken zakken weg — niet comfortabel. Tip: kies voor blokhakken of andere schoenen die niet wegzakken.</p>
       </div>
     </div>
 
     <!-- Outfit inspiratie foto's -->
     <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:2.5rem;">
       <div style="overflow:hidden;height:360px;">
-        <img src="photos/carousel1.jpg" alt="Garden Chique outfit inspiratie" style="width:100%;height:100%;object-fit:cover;object-position:center 8%;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        <img src="photos/carousel1.jpg" alt="Garden Chic outfit inspiratie" style="width:100%;height:100%;object-fit:cover;object-position:center 8%;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
       </div>
       <div style="overflow:hidden;height:360px;">
-        <img src="photos/couple-dressed.jpg" alt="Garden Chique outfit inspiratie" style="width:100%;height:100%;object-fit:cover;object-position:center 5%;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        <img src="photos/couple-dressed.jpg" alt="Garden Chic outfit inspiratie" style="width:100%;height:100%;object-fit:cover;object-position:center 5%;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
       </div>
       <div style="overflow:hidden;height:360px;">
-        <img src="photos/new-classy.jpg" alt="Garden Chique outfit inspiratie" style="width:100%;height:100%;object-fit:cover;object-position:center 5%;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
+        <img src="photos/new-classy.jpg" alt="Garden Chic outfit inspiratie" style="width:100%;height:100%;object-fit:cover;object-position:center 5%;display:block;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'" />
       </div>
     </div>
   </div>
 </section>
-
-</div>
 
 <!-- ══ VERBLIJF / HOTELS ═════════════════════════════════════ -->
 <section id="verblijf" class="section--mid">
@@ -1228,7 +1227,7 @@
 
     <div class="cards">
       <div class="card">
-        <div class="card__badge">⭐⭐⭐⭐ Hotel · Barchem (direct om de hoek)</div>
+        <div class="card__badge">Hotel · Barchem (direct om de hoek)</div>
         <h3>Hotel de Lochemse Heuvels</h3>
         <p>Barchem</p>
         <hr />
@@ -1237,7 +1236,7 @@
       </div>
 
       <div class="card">
-        <div class="card__badge">🏠 B&amp;B &amp; hotels · omgeving Barchem</div>
+        <div class="card__badge">B&amp;B &amp; hotels · omgeving Barchem</div>
         <h3>Booking.com &amp; Airbnb</h3>
         <p>Diverse opties in de directe omgeving</p>
         <hr />
@@ -1249,7 +1248,7 @@
       </div>
 
       <div class="card">
-        <div class="card__badge">⛺ Camping · direct naast de locatie</div>
+        <div class="card__badge">Camping · direct naast de locatie</div>
         <h3>Heksenlaak &amp; camping opties</h3>
         <p>Aan de overkant van de locatie</p>
         <hr />
@@ -1260,11 +1259,15 @@
 </section>
 
 <!-- ══ RSVP ══════════════════════════════════════════════════ -->
-<section id="rsvp" class="section--deep">
-  <div class="section-inner" style="text-align:center;">
+<section id="rsvp" class="section--deep" style="position:relative;overflow:hidden;">
+  <!-- Background sun decoration -->
+  <div class="sun-bg-wrap" aria-hidden="true">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="50" y1="2" x2="50" y2="98" stroke="currentColor" stroke-width="1.5"/><line x1="2" y1="50" x2="98" y2="50" stroke="currentColor" stroke-width="1.5"/><line x1="15" y1="15" x2="85" y2="85" stroke="currentColor" stroke-width="1.5"/><line x1="85" y1="15" x2="15" y2="85" stroke="currentColor" stroke-width="1.5"/><line x1="50" y1="2" x2="85" y2="50" stroke="currentColor" stroke-width="1"/><line x1="85" y1="50" x2="50" y2="98" stroke="currentColor" stroke-width="1"/><line x1="50" y1="98" x2="15" y2="50" stroke="currentColor" stroke-width="1"/><line x1="15" y1="50" x2="50" y2="2" stroke="currentColor" stroke-width="1"/><line x1="8" y1="25" x2="92" y2="75" stroke="currentColor" stroke-width="0.7"/><line x1="25" y1="8" x2="75" y2="92" stroke="currentColor" stroke-width="0.7"/><line x1="92" y1="25" x2="8" y2="75" stroke="currentColor" stroke-width="0.7"/><line x1="75" y1="8" x2="25" y2="92" stroke="currentColor" stroke-width="0.7"/></svg>
+  </div>
+  <div class="section-inner" style="text-align:center;position:relative;">
     <div class="ornament">
       <div class="ornament__line"></div>
-      <div class="ornament__star">✦</div>
+      <svg class="sun-sm" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/><line x1="9" y1="27" x2="91" y2="73" stroke="currentColor" stroke-width="0.8"/><line x1="27" y1="9" x2="73" y2="91" stroke="currentColor" stroke-width="0.8"/><line x1="91" y1="27" x2="9" y2="73" stroke="currentColor" stroke-width="0.8"/><line x1="73" y1="9" x2="27" y2="91" stroke="currentColor" stroke-width="0.8"/></svg>
       <div class="ornament__line"></div>
     </div>
     <span class="label">Aanmelden</span>
@@ -1278,7 +1281,6 @@
       <div data-tf-live="JOUW_TYPEFORM_ID"></div>
       <script src="//embed.typeform.com/next/embed.js"></script>
       -->
-      <span style="font-size:2rem;">✉️</span>
       <p style="opacity:0.6;font-size:0.82rem;max-width:360px;">
         Plak hier je Typeform-embedcode,<br />of gebruik de knop hieronder.
       </p>
@@ -1299,7 +1301,7 @@
     <h2>Wedding Gifts</h2>
     <p>
       Jullie aanwezigheid is écht het mooiste cadeau. Maar voor wie toch iets wil geven:
-      een bijdrage aan onze huwelijksreis wordt enorm gewaardeerd! 🙏
+      een bijdrage aan onze huwelijksreis wordt enorm gewaardeerd.
     </p>
 
     <div class="gifts-bank">
@@ -1318,27 +1320,27 @@
     <h2>Contactpersonen</h2>
     <p>
       Heb je een vraag over de dag, de locatie, het programma, of wil je gewoon even
-      kletsen? Onze ceremoniemeesters staan voor jullie klaar! 🌟
+      kletsen? Onze ceremoniemeesters staan voor jullie klaar!
     </p>
 
     <div class="contact-grid">
       <div class="contact-card">
-        <span class="contact-card__icon">🌟</span>
+        <svg class="sun-sm" style="margin:0 auto 1rem;color:rgba(245,234,216,0.35);" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/></svg>
         <div class="contact-card__role">Ceremoniemaster</div>
         <h3>Carlijn de Visser</h3>
         <p>
-          📞 <a href="tel:+31641039826">+31 6 41 03 98 26</a><br />
-          ✉️ <a href="mailto:febo.best.wedding.ever@gmail.com">febo.best.wedding.ever@gmail.com</a>
+          <a href="tel:+31641039826">+31 6 41 03 98 26</a><br />
+          <a href="mailto:febo.best.wedding.ever@gmail.com">febo.best.wedding.ever@gmail.com</a>
         </p>
       </div>
 
       <div class="contact-card">
-        <span class="contact-card__icon">🌟</span>
+        <svg class="sun-sm" style="margin:0 auto 1rem;color:rgba(245,234,216,0.35);" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/></svg>
         <div class="contact-card__role">Ceremoniemaster</div>
         <h3>Floris van der Zandt</h3>
         <p>
-          📞 <a href="tel:+31614452845">+31 6 14 45 28 45</a><br />
-          ✉️ <a href="mailto:febo.best.wedding.ever@gmail.com">febo.best.wedding.ever@gmail.com</a>
+          <a href="tel:+31614452845">+31 6 14 45 28 45</a><br />
+          <a href="mailto:febo.best.wedding.ever@gmail.com">febo.best.wedding.ever@gmail.com</a>
         </p>
       </div>
     </div>
@@ -1363,7 +1365,7 @@
       </div>
       <div class="info-block">
         <div class="info-block__title">Parkeren</div>
-        <p>Aan de overkant van de locatie is een veld gereserveerd voor gasten om te parkeren. Vanaf de parking naar de locatie is het zo'n 7 minuten lopen.</p>
+        <p>Parkeren doe je <strong>onderaan de berg</strong> — aan de overkant van de locatie is een veld gereserveerd voor gasten. Vanaf de parkeerplaats is het zo'n 7 minuten lopen omhoog naar The HillTop.</p>
       </div>
       <div class="info-block">
         <div class="info-block__title">Openbaar vervoer</div>
@@ -1395,7 +1397,7 @@
   <div class="section-inner">
     <div class="ornament">
       <div class="ornament__line" style="background:rgba(26,10,6,0.15);"></div>
-      <div class="ornament__star" style="color:rgba(26,10,6,0.3);">✦</div>
+      <svg class="sun-sm" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="4" x2="50" y2="96" stroke="currentColor" stroke-width="2"/><line x1="4" y1="50" x2="96" y2="50" stroke="currentColor" stroke-width="2"/><line x1="17" y1="17" x2="83" y2="83" stroke="currentColor" stroke-width="2"/><line x1="83" y1="17" x2="17" y2="83" stroke="currentColor" stroke-width="2"/><line x1="50" y1="4" x2="83" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="83" y1="50" x2="50" y2="96" stroke="currentColor" stroke-width="1.2"/><line x1="50" y1="96" x2="17" y2="50" stroke="currentColor" stroke-width="1.2"/><line x1="17" y1="50" x2="50" y2="4" stroke="currentColor" stroke-width="1.2"/><line x1="9" y1="27" x2="91" y2="73" stroke="currentColor" stroke-width="0.8"/><line x1="27" y1="9" x2="73" y2="91" stroke="currentColor" stroke-width="0.8"/><line x1="91" y1="27" x2="9" y2="73" stroke="currentColor" stroke-width="0.8"/><line x1="73" y1="9" x2="27" y2="91" stroke="currentColor" stroke-width="0.8"/></svg>
       <div class="ornament__line" style="background:rgba(26,10,6,0.15);"></div>
     </div>
     <span class="label" style="color:rgba(26,10,6,0.5);">Veelgestelde vragen</span>
@@ -1408,9 +1410,9 @@
         <div class="faq-q" style="color:var(--dark);">Welk dagdeel ben ik uitgenodigd?</div>
         <div class="faq-a">
           <p style="color:rgba(26,10,6,0.75);">Dat staat op je uitnodiging! Even kort uitgelegd:<br /><br />
-          <strong>Hele dag gasten</strong> — welkom van inloop t/m feest (de volledige dag verwacht 🎉)<br />
+          <strong>Hele dag gasten</strong> — welkom van inloop t/m feest (de volledige dag verwacht)<br />
           <strong>Daggasten / receptiegasten</strong> — de hele dag aanwezig, maar zonder diner. Verwacht tot ongeveer 17:30.<br />
-          <strong>Avondgasten / feestgasten</strong> — welkom vanaf 21:00 voor het feest &amp; dans 🕺<br /><br />
+          <strong>Avondgasten / feestgasten</strong> — welkom vanaf 21:00 voor het feest &amp; dans<br /><br />
           Twijfel je? Neem even contact op met onze ceremoniemeesters!</p>
         </div>
       </div>
@@ -1439,7 +1441,7 @@
       <div class="faq-item" style="border-color:rgba(26,10,6,0.15);">
         <div class="faq-q" style="color:var(--dark);">Mag ik foto's maken tijdens de ceremonie?</div>
         <div class="faq-a">
-          <p style="color:rgba(26,10,6,0.75);">We vragen je om tijdens de ceremonie even je telefoon weg te leggen zodat iedereen er écht bij is. Onze fotograaf legt alles vast. Na de ceremonie: ga je gang! 📸<br /><br />Foto's en video's van de dag mogen worden gedeeld op social media — maar wacht even tot wij ze zelf als eerste hebben gepost. Dan mag jij ze daarna volop liken en delen!</p>
+          <p style="color:rgba(26,10,6,0.75);">We vragen je om tijdens de ceremonie even je telefoon weg te leggen zodat iedereen er écht bij is. Onze fotograaf legt alles vast. Na de ceremonie: ga je gang!<br /><br />Foto's en video's van de dag mogen worden gedeeld op social media — maar wacht even tot wij ze zelf als eerste hebben gepost. Dan mag jij ze daarna volop liken en delen!</p>
         </div>
       </div>
 
@@ -1453,7 +1455,7 @@
       <div class="faq-item" style="border-color:rgba(26,10,6,0.15);">
         <div class="faq-q" style="color:var(--dark);">Wat is de dresscode precies?</div>
         <div class="faq-a">
-          <p style="color:rgba(26,10,6,0.75);">Garden Chique! Denk: kleurrijk, zomers, een beetje feestelijk. Bloemenprints, floaty stoffen, gedurfde kleuren. Zie de "Garden Chique" sectie voor alle details en kleurinspiratie.</p>
+          <p style="color:rgba(26,10,6,0.75);">Garden Chic! Denk: vrolijk, zomers en feestelijk. Floaty stoffen, gedurfde kleuren. Zie de "Garden Chic" sectie voor alle details.</p>
         </div>
       </div>
 
@@ -1464,9 +1466,10 @@
 
 <!-- ══ FOOTER ════════════════════════════════════════════════ -->
 <footer>
+  <svg style="width:28px;height:28px;opacity:0.25;margin-bottom:1.5rem;" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="2" x2="50" y2="98" stroke="#f5ead8" stroke-width="2"/><line x1="2" y1="50" x2="98" y2="50" stroke="#f5ead8" stroke-width="2"/><line x1="15" y1="15" x2="85" y2="85" stroke="#f5ead8" stroke-width="2"/><line x1="85" y1="15" x2="15" y2="85" stroke="#f5ead8" stroke-width="2"/><line x1="50" y1="2" x2="85" y2="50" stroke="#f5ead8" stroke-width="1.2"/><line x1="85" y1="50" x2="50" y2="98" stroke="#f5ead8" stroke-width="1.2"/><line x1="50" y1="98" x2="15" y2="50" stroke="#f5ead8" stroke-width="1.2"/><line x1="15" y1="50" x2="50" y2="2" stroke="#f5ead8" stroke-width="1.2"/><line x1="8" y1="25" x2="92" y2="75" stroke="#f5ead8" stroke-width="0.8"/><line x1="25" y1="8" x2="75" y2="92" stroke="#f5ead8" stroke-width="0.8"/><line x1="92" y1="25" x2="8" y2="75" stroke="#f5ead8" stroke-width="0.8"/><line x1="75" y1="8" x2="25" y2="92" stroke="#f5ead8" stroke-width="0.8"/></svg>
   <div class="names">Bodine &amp; Felix</div>
   <p>22.08.2026 · The HillTop · Barchem</p>
-  <p style="margin-top:0.5rem;">febowedding.nl &nbsp;·&nbsp; Met liefde gemaakt 🧡</p>
+  <p style="margin-top:0.5rem;">febowedding.nl &nbsp;·&nbsp; Met liefde gemaakt</p>
 </footer>
 
 <!-- ══ SCRIPTS ════════════════════════════════════════════════ -->
