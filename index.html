@@ -282,22 +282,23 @@
       margin-bottom: 1.5rem;
     }
 
-    /* ── Sun icon (flame sun from invitation) ──────────────────── */
+    /* ── Sun icon (real PNG from invitation) ───────────────────── */
     .starburst {
       width: 52px;
       height: 52px;
       margin: 0 auto 1.5rem;
-      color: rgba(245,234,216,0.7);
+      opacity: 0.75;
+      display: block;
     }
 
     .sun-sm {
       width: 32px;
       height: 32px;
-      color: rgba(245,234,216,0.45);
+      opacity: 0.45;
       flex-shrink: 0;
       display: block;
     }
-    .section--light .sun-sm { color: rgba(26,10,6,0.22); }
+    .section--light .sun-sm { opacity: 0.3; filter: brightness(0.2); }
 
     /* Large decorative background sun */
     .sun-bg-wrap {
@@ -309,11 +310,10 @@
       pointer-events: none;
       overflow: hidden;
     }
-    .sun-bg-wrap svg {
+    .sun-bg-wrap img {
       width: min(60vw, 480px);
       height: min(60vw, 480px);
-      opacity: 0.04;
-      color: var(--cream);
+      opacity: 0.06;
     }
 
     .hero__date {
@@ -986,35 +986,6 @@
 </head>
 <body>
 
-<!-- ══ SVG DEFS ══════════════════════════════════════════════ -->
-<!-- Flame sun icon replicating the invitation motif           -->
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none;" aria-hidden="true">
-  <defs>
-    <symbol id="sun-icon" viewBox="0 0 200 200">
-      <g transform="translate(100,100)" fill="currentColor">
-        <!-- 13 wavy flame rays, each curling slightly (organic swirl) -->
-        <path d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
-        <path transform="rotate(27.7)"  d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
-        <path transform="rotate(55.4)"  d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
-        <path transform="rotate(83.1)"  d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
-        <path transform="rotate(110.8)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
-        <path transform="rotate(138.5)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
-        <path transform="rotate(166.2)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
-        <path transform="rotate(193.8)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
-        <path transform="rotate(221.5)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
-        <path transform="rotate(249.2)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
-        <path transform="rotate(276.9)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
-        <path transform="rotate(304.6)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
-        <path transform="rotate(332.3)" d="M -8,-33 C -16,-52 -14,-70 -4,-84 C -1,-89 4,-92 8,-88 C 16,-76 14,-56 8,-33 Z"/>
-        <!-- Centre circle covering ray bases -->
-        <circle r="33"/>
-        <!-- Spiral swirl in centre -->
-        <path d="M 2,0 C 2,-8 9,-13 16,-9 C 23,-4 23,7 15,13 C 6,19-8,15-12,4 C-17,-9-9,-22 5,-24 C 20,-26 30,-12 28,5 C 26,20 12,28-3,24"
-              fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="4.5" stroke-linecap="round"/>
-      </g>
-    </symbol>
-  </defs>
-</svg>
 
 <!-- ══ NAV ═══════════════════════════════════════════════════ -->
 <nav class="nav">
@@ -1053,7 +1024,7 @@
         <div class="wavy-card__inner">
           <p class="hero__eyebrow">Je bent uitgenodigd voor het huwelijk van</p>
           <h1 class="hero__names">Bodine &amp; Felix</h1>
-          <svg class="starburst" aria-hidden="true"><use href="#sun-icon"/></svg>
+          <img src="photos/sun-icon.png" class="starburst" aria-hidden="true" alt="" />
           <p class="hero__date">22.08.2026</p>
           <p class="hero__location">The HillTop · Barchem</p>
         </div>
@@ -1078,7 +1049,7 @@
   <div class="section-inner">
     <div class="ornament">
       <div class="ornament__line"></div>
-      <svg class="sun-sm" aria-hidden="true"><use href="#sun-icon"/></svg>
+      <img src="photos/sun-icon.png" class="sun-sm" aria-hidden="true" alt="" />
       <div class="ornament__line"></div>
     </div>
     <span class="label">De grote dag</span>
@@ -1257,12 +1228,12 @@
 <section id="rsvp" class="section--deep" style="position:relative;overflow:hidden;">
   <!-- Background sun decoration -->
   <div class="sun-bg-wrap" aria-hidden="true">
-    <svg viewBox="0 0 200 200"><use href="#sun-icon"/></svg>
+    <img src="photos/sun-icon.png" alt="" />
   </div>
   <div class="section-inner" style="text-align:center;position:relative;">
     <div class="ornament">
       <div class="ornament__line"></div>
-      <svg class="sun-sm" aria-hidden="true"><use href="#sun-icon"/></svg>
+      <img src="photos/sun-icon.png" class="sun-sm" aria-hidden="true" alt="" />
       <div class="ornament__line"></div>
     </div>
     <span class="label">Aanmelden</span>
@@ -1313,7 +1284,7 @@
 
     <div class="contact-grid">
       <div class="contact-card">
-        <svg class="sun-sm" style="margin:0 auto 1rem;" aria-hidden="true"><use href="#sun-icon"/></svg>
+        <img src="photos/sun-icon.png" class="sun-sm" style="margin:0 auto 1rem;" aria-hidden="true" alt="" />
         <div class="contact-card__role">Ceremoniemaster</div>
         <h3>Carlijn de Visser</h3>
         <p>
@@ -1323,7 +1294,7 @@
       </div>
 
       <div class="contact-card">
-        <svg class="sun-sm" style="margin:0 auto 1rem;" aria-hidden="true"><use href="#sun-icon"/></svg>
+        <img src="photos/sun-icon.png" class="sun-sm" style="margin:0 auto 1rem;" aria-hidden="true" alt="" />
         <div class="contact-card__role">Ceremoniemaster</div>
         <h3>Floris van der Zandt</h3>
         <p>
@@ -1374,7 +1345,7 @@
   <div class="section-inner">
     <div class="ornament">
       <div class="ornament__line" style="background:rgba(26,10,6,0.15);"></div>
-      <svg class="sun-sm" aria-hidden="true"><use href="#sun-icon"/></svg>
+      <img src="photos/sun-icon.png" class="sun-sm" aria-hidden="true" alt="" />
       <div class="ornament__line" style="background:rgba(26,10,6,0.15);"></div>
     </div>
     <span class="label" style="color:rgba(26,10,6,0.5);">Veelgestelde vragen</span>
@@ -1443,7 +1414,7 @@
 
 <!-- ══ FOOTER ════════════════════════════════════════════════ -->
 <footer>
-  <svg style="width:34px;height:34px;opacity:0.35;margin-bottom:1.5rem;color:var(--cream);" aria-hidden="true"><use href="#sun-icon"/></svg>
+  <img src="photos/sun-icon.png" style="width:34px;height:34px;opacity:0.4;margin-bottom:1.5rem;display:block;margin-left:auto;margin-right:auto;" aria-hidden="true" alt="" />
   <div class="names">Bodine &amp; Felix</div>
   <p>22.08.2026 · The HillTop · Barchem</p>
   <p style="margin-top:0.5rem;">febowedding.com &nbsp;·&nbsp; Met liefde gemaakt</p>
