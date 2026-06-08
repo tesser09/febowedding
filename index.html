@@ -206,62 +206,24 @@
     .wavy-card__outer {
       background: var(--orange);
       padding: 14px;
-      clip-path: polygon(
-        0% 2.5%, 2% 0%, 4% 2%, 6% 0%, 8% 2%, 10% 0%, 12% 2%, 14% 0%, 16% 2%, 18% 0%,
-        20% 2%, 22% 0%, 24% 2%, 26% 0%, 28% 2%, 30% 0%, 32% 2%, 34% 0%, 36% 2%, 38% 0%,
-        40% 2%, 42% 0%, 44% 2%, 46% 0%, 48% 2%, 50% 0%, 52% 2%, 54% 0%, 56% 2%, 58% 0%,
-        60% 2%, 62% 0%, 64% 2%, 66% 0%, 68% 2%, 70% 0%, 72% 2%, 74% 0%, 76% 2%, 78% 0%,
-        80% 2%, 82% 0%, 84% 2%, 86% 0%, 88% 2%, 90% 0%, 92% 2%, 94% 0%, 96% 2%, 98% 0%, 100% 2.5%,
-        100% 2.5%, 97.5% 4%, 100% 6%, 97.5% 8%, 100% 10%, 97.5% 12%, 100% 14%, 97.5% 16%, 100% 18%,
-        97.5% 20%, 100% 22%, 97.5% 24%, 100% 26%, 97.5% 28%, 100% 30%, 97.5% 32%, 100% 34%, 97.5% 36%,
-        100% 38%, 97.5% 40%, 100% 42%, 97.5% 44%, 100% 46%, 97.5% 48%, 100% 50%, 97.5% 52%, 100% 54%,
-        97.5% 56%, 100% 58%, 97.5% 60%, 100% 62%, 97.5% 64%, 100% 66%, 97.5% 68%, 100% 70%, 97.5% 72%,
-        100% 74%, 97.5% 76%, 100% 78%, 97.5% 80%, 100% 82%, 97.5% 84%, 100% 86%, 97.5% 88%, 100% 90%,
-        97.5% 92%, 100% 94%, 97.5% 96%, 100% 97.5%,
-        100% 100%, 98% 97.5%, 96% 100%, 94% 97.5%, 92% 100%, 90% 97.5%, 88% 100%, 86% 97.5%, 84% 100%,
-        82% 97.5%, 80% 100%, 78% 97.5%, 76% 100%, 74% 97.5%, 72% 100%, 70% 97.5%, 68% 100%, 66% 97.5%,
-        64% 100%, 62% 97.5%, 60% 100%, 58% 97.5%, 56% 100%, 54% 97.5%, 52% 100%, 50% 97.5%, 48% 100%,
-        46% 97.5%, 44% 100%, 42% 97.5%, 40% 100%, 38% 97.5%, 36% 100%, 34% 97.5%, 32% 100%, 30% 97.5%,
-        28% 100%, 26% 97.5%, 24% 100%, 22% 97.5%, 20% 100%, 18% 97.5%, 16% 100%, 14% 97.5%, 12% 100%,
-        10% 97.5%, 8% 100%, 6% 97.5%, 4% 100%, 2% 97.5%, 0% 100%,
-        0% 100%, 2.5% 96%, 0% 94%, 2.5% 92%, 0% 90%, 2.5% 88%, 0% 86%, 2.5% 84%, 0% 82%,
-        2.5% 80%, 0% 78%, 2.5% 76%, 0% 74%, 2.5% 72%, 0% 70%, 2.5% 68%, 0% 66%, 2.5% 64%,
-        0% 62%, 2.5% 60%, 0% 58%, 2.5% 56%, 0% 54%, 2.5% 52%, 0% 50%, 2.5% 48%, 0% 46%,
-        2.5% 44%, 0% 42%, 2.5% 40%, 0% 38%, 2.5% 36%, 0% 34%, 2.5% 32%, 0% 30%, 2.5% 28%,
-        0% 26%, 2.5% 24%, 0% 22%, 2.5% 20%, 0% 18%, 2.5% 16%, 0% 14%, 2.5% 12%, 0% 10%,
-        2.5% 8%, 0% 6%, 2.5% 4%, 0% 2.5%
-      );
+      /* clip-path applied via JS with smooth sine curves */
     }
 
     .wavy-card__inner {
       background: var(--red-mid);
       padding: 3rem 2.5rem;
       text-align: center;
-      clip-path: polygon(
-        0% 2.5%, 2% 0%, 4% 2%, 6% 0%, 8% 2%, 10% 0%, 12% 2%, 14% 0%, 16% 2%, 18% 0%,
-        20% 2%, 22% 0%, 24% 2%, 26% 0%, 28% 2%, 30% 0%, 32% 2%, 34% 0%, 36% 2%, 38% 0%,
-        40% 2%, 42% 0%, 44% 2%, 46% 0%, 48% 2%, 50% 0%, 52% 2%, 54% 0%, 56% 2%, 58% 0%,
-        60% 2%, 62% 0%, 64% 2%, 66% 0%, 68% 2%, 70% 0%, 72% 2%, 74% 0%, 76% 2%, 78% 0%,
-        80% 2%, 82% 0%, 84% 2%, 86% 0%, 88% 2%, 90% 0%, 92% 2%, 94% 0%, 96% 2%, 98% 0%, 100% 2.5%,
-        100% 2.5%, 97.5% 4%, 100% 6%, 97.5% 8%, 100% 10%, 97.5% 12%, 100% 14%, 97.5% 16%, 100% 18%,
-        97.5% 20%, 100% 22%, 97.5% 24%, 100% 26%, 97.5% 28%, 100% 30%, 97.5% 32%, 100% 34%, 97.5% 36%,
-        100% 38%, 97.5% 40%, 100% 42%, 97.5% 44%, 100% 46%, 97.5% 48%, 100% 50%, 97.5% 52%, 100% 54%,
-        97.5% 56%, 100% 58%, 97.5% 60%, 100% 62%, 97.5% 64%, 100% 66%, 97.5% 68%, 100% 70%, 97.5% 72%,
-        100% 74%, 97.5% 76%, 100% 78%, 97.5% 80%, 100% 82%, 97.5% 84%, 100% 86%, 97.5% 88%, 100% 90%,
-        97.5% 92%, 100% 94%, 97.5% 96%, 100% 97.5%,
-        100% 100%, 98% 97.5%, 96% 100%, 94% 97.5%, 92% 100%, 90% 97.5%, 88% 100%, 86% 97.5%, 84% 100%,
-        82% 97.5%, 80% 100%, 78% 97.5%, 76% 100%, 74% 97.5%, 72% 100%, 70% 97.5%, 68% 100%, 66% 97.5%,
-        64% 100%, 62% 97.5%, 60% 100%, 58% 97.5%, 56% 100%, 54% 97.5%, 52% 100%, 50% 97.5%, 48% 100%,
-        46% 97.5%, 44% 100%, 42% 97.5%, 40% 100%, 38% 97.5%, 36% 100%, 34% 97.5%, 32% 100%, 30% 97.5%,
-        28% 100%, 26% 97.5%, 24% 100%, 22% 97.5%, 20% 100%, 18% 97.5%, 16% 100%, 14% 97.5%, 12% 100%,
-        10% 97.5%, 8% 100%, 6% 97.5%, 4% 100%, 2% 97.5%, 0% 100%,
-        0% 100%, 2.5% 96%, 0% 94%, 2.5% 92%, 0% 90%, 2.5% 88%, 0% 86%, 2.5% 84%, 0% 82%,
-        2.5% 80%, 0% 78%, 2.5% 76%, 0% 74%, 2.5% 72%, 0% 70%, 2.5% 68%, 0% 66%, 2.5% 64%,
-        0% 62%, 2.5% 60%, 0% 58%, 2.5% 56%, 0% 54%, 2.5% 52%, 0% 50%, 2.5% 48%, 0% 46%,
-        2.5% 44%, 0% 42%, 2.5% 40%, 0% 38%, 2.5% 36%, 0% 34%, 2.5% 32%, 0% 30%, 2.5% 28%,
-        0% 26%, 2.5% 24%, 0% 22%, 2.5% 20%, 0% 18%, 2.5% 16%, 0% 14%, 2.5% 12%, 0% 10%,
-        2.5% 8%, 0% 6%, 2.5% 4%, 0% 2.5%
-      );
+      /* clip-path applied via JS with smooth sine curves */
+    }
+
+    /* Wavy rule — programma divider (matches invitation page 2) */
+    .wavy-rule {
+      display: block;
+      width: 100%;
+      max-width: 260px;
+      height: 14px;
+      margin: 0.6rem 0 0.2rem;
+      overflow: visible;
     }
 
     .hero__eyebrow {
@@ -590,9 +552,17 @@
       margin-bottom: 2rem;
     }
 
-    .ornament__line { flex: 1; height: 1px; background: rgba(245,234,216,0.18); }
+    .ornament__line {
+      flex: 1; height: 14px; overflow: visible;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='78' height='14' viewBox='0 0 78 14'%3E%3Cpath d='M 0,7 C 6.5,0 13,14 19.5,7 C 26,0 32.5,14 39,7 C 45.5,0 52,14 58.5,7 C 65,0 71.5,14 78,7' fill='none' stroke='rgba(245,234,216,0.22)' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+      background-position: center center;
+      background-size: 78px 14px;
+    }
     .ornament__star { font-size: 0.7rem; color: rgba(245,234,216,0.4); }
-    .section--light .ornament__line { background: rgba(245,234,216,0.28); }
+    .section--light .ornament__line {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='78' height='14' viewBox='0 0 78 14'%3E%3Cpath d='M 0,7 C 6.5,0 13,14 19.5,7 C 26,0 32.5,14 39,7 C 45.5,0 52,14 58.5,7 C 65,0 71.5,14 78,7' fill='none' stroke='rgba(26,10,6,0.2)' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+    }
 
     /* ── Photo band ─────────────────────────────────────────── */
     .photo-band {
@@ -1124,24 +1094,28 @@
         <div class="timeline__time">13:00 – 13:30</div>
         <div class="timeline__event">Inloop &amp; welkom</div>
         <p class="timeline__desc">Kom binnen, pak een drankje en geniet van de sfeer bij The HillTop</p>
+        <svg class="wavy-rule" viewBox="0 0 260 14" aria-hidden="true" preserveAspectRatio="none"><path d="M 0,7 C 13,0 26,14 39,7 C 52,0 65,14 78,7 C 91,0 104,14 117,7 C 130,0 143,14 156,7 C 169,0 182,14 195,7 C 208,0 221,14 234,7 C 247,0 260,7 260,7" fill="none" stroke="rgba(245,234,216,0.22)" stroke-width="1.8" stroke-linecap="round"/></svg>
       </li>
       <li class="timeline__item">
         <div class="timeline__dot"></div>
         <div class="timeline__time">14:00</div>
         <div class="timeline__event">Start ceremonie</div>
         <p class="timeline__desc">Het grote moment — wij zeggen ja!</p>
+        <svg class="wavy-rule" viewBox="0 0 260 14" aria-hidden="true" preserveAspectRatio="none"><path d="M 0,7 C 13,0 26,14 39,7 C 52,0 65,14 78,7 C 91,0 104,14 117,7 C 130,0 143,14 156,7 C 169,0 182,14 195,7 C 208,0 221,14 234,7 C 247,0 260,7 260,7" fill="none" stroke="rgba(245,234,216,0.22)" stroke-width="1.8" stroke-linecap="round"/></svg>
       </li>
       <li class="timeline__item">
         <div class="timeline__dot"></div>
         <div class="timeline__time">Na de ceremonie</div>
         <div class="timeline__event">Borrel</div>
         <p class="timeline__desc">Proost op het bruidspaar — bubbels, knabbels en een hoop knuffels</p>
+        <svg class="wavy-rule" viewBox="0 0 260 14" aria-hidden="true" preserveAspectRatio="none"><path d="M 0,7 C 13,0 26,14 39,7 C 52,0 65,14 78,7 C 91,0 104,14 117,7 C 130,0 143,14 156,7 C 169,0 182,14 195,7 C 208,0 221,14 234,7 C 247,0 260,7 260,7" fill="none" stroke="rgba(245,234,216,0.22)" stroke-width="1.8" stroke-linecap="round"/></svg>
       </li>
       <li class="timeline__item">
         <div class="timeline__dot"></div>
         <div class="timeline__time">17:30</div>
         <div class="timeline__event">Diner</div>
         <p class="timeline__desc">Aanschuiven en genieten van een heerlijk diner</p>
+        <svg class="wavy-rule" viewBox="0 0 260 14" aria-hidden="true" preserveAspectRatio="none"><path d="M 0,7 C 13,0 26,14 39,7 C 52,0 65,14 78,7 C 91,0 104,14 117,7 C 130,0 143,14 156,7 C 169,0 182,14 195,7 C 208,0 221,14 234,7 C 247,0 260,7 260,7" fill="none" stroke="rgba(245,234,216,0.22)" stroke-width="1.8" stroke-linecap="round"/></svg>
       </li>
       <li class="timeline__item">
         <div class="timeline__dot"></div>
@@ -1344,9 +1318,9 @@
 <section id="faq" class="section--light">
   <div class="section-inner">
     <div class="ornament">
-      <div class="ornament__line" style="background:rgba(26,10,6,0.15);"></div>
+      <div class="ornament__line"></div>
       <img src="photos/sun-icon.png" class="sun-sm" aria-hidden="true" alt="" />
-      <div class="ornament__line" style="background:rgba(26,10,6,0.15);"></div>
+      <div class="ornament__line"></div>
     </div>
     <span class="label" style="color:rgba(26,10,6,0.5);">Veelgestelde vragen</span>
     <h2>FAQ</h2>
@@ -1492,6 +1466,61 @@
       if (!isOpen) item.classList.add('open');
     });
   });
+
+  // ── Wavy card smooth sine clip-path ──────────────────────
+  // Replaces the old zig-zag polygon with smooth Bézier sine waves,
+  // matching the flowing wavy border on the invitation.
+  function makeWavyPath(W, H) {
+    const A  = Math.min(18, W * 0.04);  // amplitude in px (4% of width, max 18px)
+    const nH = 5;                        // half-arches on horizontal edges
+    const nV = 4;                        // half-arches on vertical edges
+    const BZ = 0.3642;                   // Bézier factor for smooth sine arch
+    const tH = (W - 2 * A) / nH;
+    const tV = (H - 2 * A) / nV;
+    const bH = BZ * tH, bV = BZ * tV;
+    const r  = (v) => Math.round(v * 10) / 10;  // round to 1 decimal
+
+    let d = `M ${r(A)},${r(A)}`;
+
+    // TOP edge: left → right
+    for (let i = 0; i < nH; i++) {
+      const x0 = A + i * tH, x1 = x0 + tH;
+      const py = i % 2 === 0 ? 0 : 2 * A;
+      d += ` C ${r(x0+bH)},${r(py)} ${r(x1-bH)},${r(py)} ${r(x1)},${r(A)}`;
+    }
+    // RIGHT edge: top → bottom
+    for (let i = 0; i < nV; i++) {
+      const y0 = A + i * tV, y1 = y0 + tV;
+      const px = i % 2 === 0 ? W : W - 2 * A;
+      d += ` C ${r(px)},${r(y0+bV)} ${r(px)},${r(y1-bV)} ${r(W-A)},${r(y1)}`;
+    }
+    // BOTTOM edge: right → left
+    for (let i = 0; i < nH; i++) {
+      const x0 = W - A - i * tH, x1 = x0 - tH;
+      const py = i % 2 === 0 ? H : H - 2 * A;
+      d += ` C ${r(x0-bH)},${r(py)} ${r(x1+bH)},${r(py)} ${r(x1)},${r(H-A)}`;
+    }
+    // LEFT edge: bottom → top
+    for (let i = 0; i < nV; i++) {
+      const y0 = H - A - i * tV, y1 = y0 - tV;
+      const px = i % 2 === 0 ? 0 : 2 * A;
+      d += ` C ${r(px)},${r(y0-bV)} ${r(px)},${r(y1+bV)} ${r(A)},${r(y1)}`;
+    }
+    return d + ' Z';
+  }
+
+  function applyWavyClips() {
+    document.querySelectorAll('.wavy-card__outer, .wavy-card__inner').forEach(el => {
+      const { width, height } = el.getBoundingClientRect();
+      if (width > 10 && height > 10) {
+        el.style.clipPath = `path("${makeWavyPath(width, height)}")`;
+      }
+    });
+  }
+
+  applyWavyClips();
+  window.addEventListener('resize', applyWavyClips);
+  setTimeout(applyWavyClips, 150);  // re-apply after layout settles
 </script>
 
 </body>
